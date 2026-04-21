@@ -1,0 +1,2303 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>music4all.ru – Уроки гитары</title>
+<script type="text/javascript" nonce="5d24f7d7179940c3be86e322584" src="//local.adguard.org?ts=1776745650614&amp;type=content-script&amp;dmn=private-us-east-1.manuscdn.com&amp;url=https%3A%2F%2Fprivate-us-east-1.manuscdn.com%2FsessionFile%2FMxqZaAjGXYMY8LRz3nyrpo%2Fsandbox%2FtumyZZzkhlaiHIVfCzronx_1776750911556_na1fn_L2hvbWUvdWJ1bnR1L211c2ljNGFsbC9pbmRleA.html%3FPolicy%3DeyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvTXhxWmFBakdYWU1ZOExSejNueXJwby9zYW5kYm94L3R1bXlaWnpraGxhaUhJVmZDenJvbnhfMTc3Njc1MDkxMTU1Nl9uYTFmbl9MMmh2YldVdmRXSjFiblIxTDIxMWMybGpOR0ZzYkM5cGJtUmxlQS5odG1sIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_%26Key-Pair-Id%3DK2HSFNDJXOU9YS%26Signature%3Dj7LY6L6vj94qXFt6bdqF4E~1HfWiI7wJZk8BbrrpE05ckNucxeH~RpT7kNxWnxvb~9ym~KRyO9jYTBaIshEM6oWhBxno4ngqJiXNzC~35we4nPTIChFRI-llv1Ge-r1~g-QfMoGHTYD7p0ZqwJrnT-nAeoTR~L3CYe1W-IeAqrJ~UvWfOyadf9wkKKKhvKpxLLSPihP4uRUGs3ccoOZV-lpSEIcyDP~6HQwZRMaqXzuYP~PVclEDnXnG6S3PSQbe3yZJd5OuvDFnFw44CuHN3q2sjyuqfgnH90F7obiHnylHLgG1bRVSy3Y9veOMl53cdB6tntkDVfJ0dORZbKddRg__&amp;app=chrome.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="5d24f7d7179940c3be86e322584" src="//local.adguard.org?ts=1776745650614&amp;name=AdGuard%20Extra&amp;name=AdGuard%20Popup%20Blocker&amp;type=user-script"></script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   CSS VARIABLES & THEMES
+   ============================================================ */
+:root {
+  --purple: #8b5cf6;
+  --purple-light: #a78bfa;
+  --purple-dark: #6d28d9;
+  --orange: #f97316;
+  --orange-light: #fb923c;
+  --orange-dark: #ea580c;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-lg: 16px;
+  --transition: 0.25s ease;
+  --shadow: 0 4px 24px rgba(0,0,0,0.18);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.28);
+}
+
+[data-theme="dark"] {
+  --bg: #0f0f14;
+  --bg2: #16161e;
+  --bg3: #1e1e2a;
+  --bg4: #252535;
+  --surface: #1a1a26;
+  --surface2: #22223a;
+  --border: #2e2e45;
+  --text: #e8e8f0;
+  --text2: #a0a0c0;
+  --text3: #6060a0;
+  --card-bg: #1a1a28;
+  --input-bg: #12121c;
+  --header-bg: rgba(15,15,20,0.95);
+  --modal-overlay: rgba(0,0,0,0.75);
+}
+
+[data-theme="light"] {
+  --bg: #f5f3ff;
+  --bg2: #ede9fe;
+  --bg3: #ffffff;
+  --bg4: #f0f0f8;
+  --surface: #ffffff;
+  --surface2: #f5f3ff;
+  --border: #ddd6fe;
+  --text: #1a1a2e;
+  --text2: #4a4a6a;
+  --text3: #8080a0;
+  --card-bg: #ffffff;
+  --input-bg: #f8f7ff;
+  --header-bg: rgba(245,243,255,0.95);
+  --modal-overlay: rgba(0,0,0,0.45);
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.6;
+  transition: background var(--transition), color var(--transition);
+}
+
+a { color: var(--purple-light); text-decoration: none; }
+a:hover { color: var(--orange-light); }
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: 0.95rem;
+  background: var(--input-bg);
+  border: 1.5px solid var(--border);
+  color: var(--text);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  width: 100%;
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--purple);
+  box-shadow: 0 0 0 3px rgba(139,92,246,0.18);
+}
+select option { background: var(--bg2); }
+textarea { resize: vertical; min-height: 90px; }
+label { font-size: 0.85rem; font-weight: 600; color: var(--text2); display: block; margin-bottom: 5px; }
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 10px 20px; border-radius: 50px; border: none;
+  font-family: inherit; font-size: 0.9rem; font-weight: 600;
+  cursor: pointer; transition: all var(--transition);
+  white-space: nowrap;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(139,92,246,0.35);
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--purple-light), var(--purple));
+  box-shadow: 0 6px 20px rgba(139,92,246,0.5);
+  transform: translateY(-1px);
+}
+.btn-orange {
+  background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(249,115,22,0.35);
+}
+.btn-orange:hover {
+  background: linear-gradient(135deg, var(--orange-light), var(--orange));
+  box-shadow: 0 6px 20px rgba(249,115,22,0.5);
+  transform: translateY(-1px);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--text2);
+  border: 1.5px solid var(--border);
+}
+.btn-ghost:hover {
+  background: var(--bg3);
+  color: var(--text);
+  border-color: var(--purple);
+}
+.btn-danger {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(239,68,68,0.3);
+}
+.btn-danger:hover {
+  background: linear-gradient(135deg, #f87171, #ef4444);
+  transform: translateY(-1px);
+}
+.btn-sm { padding: 6px 14px; font-size: 0.8rem; }
+.btn-xs { padding: 4px 10px; font-size: 0.75rem; }
+.btn-icon { padding: 8px; border-radius: 50%; width: 36px; height: 36px; justify-content: center; }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none !important; }
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+#app-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: var(--header-bg);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 20px;
+  height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: background var(--transition);
+}
+.header-logo {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 1.1rem; font-weight: 800;
+  background: linear-gradient(135deg, var(--purple-light), var(--orange));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.header-logo svg { flex-shrink: 0; }
+.header-actions { display: flex; align-items: center; gap: 10px; }
+.theme-toggle {
+  background: var(--bg3); border: 1.5px solid var(--border);
+  border-radius: 50px; padding: 6px 12px;
+  cursor: pointer; display: flex; align-items: center; gap: 6px;
+  font-size: 0.8rem; font-weight: 600; color: var(--text2);
+  transition: all var(--transition);
+}
+.theme-toggle:hover { border-color: var(--purple); color: var(--text); }
+.user-badge {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: 50px; padding: 5px 14px 5px 5px;
+  font-size: 0.85rem; font-weight: 500;
+}
+.user-avatar {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--purple), var(--orange));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.75rem; font-weight: 700; color: #fff;
+}
+
+/* ============================================================
+   MAIN LAYOUT
+   ============================================================ */
+#app-main {
+  padding-top: 64px;
+  min-height: 100vh;
+}
+
+/* ============================================================
+   VIEWS (PAGES)
+   ============================================================ */
+.view { display: none; }
+.view.active { display: block; }
+
+/* ============================================================
+   HERO / LOGIN PAGE
+   ============================================================ */
+#view-login {
+  min-height: calc(100vh - 64px);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+}
+#view-login.active { display: flex; }
+
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+  overflow: hidden;
+}
+.hero-bg::before {
+  content: '';
+  position: absolute; top: -40%; left: -20%;
+  width: 80%; height: 80%;
+  background: radial-gradient(ellipse, rgba(139,92,246,0.12) 0%, transparent 70%);
+  animation: float1 8s ease-in-out infinite;
+}
+.hero-bg::after {
+  content: '';
+  position: absolute; bottom: -30%; right: -10%;
+  width: 60%; height: 60%;
+  background: radial-gradient(ellipse, rgba(249,115,22,0.1) 0%, transparent 70%);
+  animation: float2 10s ease-in-out infinite;
+}
+@keyframes float1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(30px,-20px)} }
+@keyframes float2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-20px,30px)} }
+
+.guitar-silhouette {
+  position: absolute; right: 5%; top: 50%; transform: translateY(-50%);
+  opacity: 0.04; z-index: 0;
+}
+
+.login-container {
+  position: relative; z-index: 1;
+  width: 100%; max-width: 420px;
+}
+.login-hero-text {
+  text-align: center; margin-bottom: 32px;
+}
+.login-hero-text h1 {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-weight: 800; line-height: 1.2;
+  background: linear-gradient(135deg, var(--purple-light), var(--orange));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+.login-hero-text p { color: var(--text2); font-size: 1rem; }
+
+.login-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-lg);
+}
+.login-card h2 {
+  font-size: 1.25rem; font-weight: 700; margin-bottom: 24px;
+  text-align: center;
+}
+.form-group { margin-bottom: 16px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.login-footer {
+  margin-top: 20px; text-align: center;
+  font-size: 0.82rem; color: var(--text3);
+}
+.login-footer a { color: var(--purple-light); }
+.login-footer a:hover { color: var(--orange-light); }
+
+/* ============================================================
+   FRETBOARD DECORATION
+   ============================================================ */
+.fretboard-deco {
+  display: flex; gap: 0; margin: 24px 0;
+  overflow: hidden; border-radius: 4px;
+  height: 6px;
+}
+.fret {
+  flex: 1; height: 100%;
+  background: linear-gradient(90deg, var(--purple-dark), var(--purple), var(--orange), var(--orange-dark));
+  opacity: 0.6;
+}
+
+/* ============================================================
+   ADMIN PANEL
+   ============================================================ */
+#view-admin {
+  min-height: calc(100vh - 64px);
+  padding: 30px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.admin-welcome {
+  margin-bottom: 28px;
+}
+.admin-welcome h2 {
+  font-size: 1.6rem; font-weight: 800;
+  background: linear-gradient(135deg, var(--purple-light), var(--orange));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.admin-welcome p { color: var(--text2); margin-top: 4px; }
+
+/* Admin Tabs */
+.admin-tabs {
+  display: flex; gap: 4px; flex-wrap: wrap;
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 5px;
+  margin-bottom: 24px;
+}
+.admin-tab {
+  flex: 1; min-width: 100px;
+  padding: 10px 16px; border-radius: var(--radius-sm);
+  border: none; background: transparent;
+  color: var(--text2); font-family: inherit;
+  font-size: 0.88rem; font-weight: 600;
+  cursor: pointer; transition: all var(--transition);
+  text-align: center;
+}
+.admin-tab:hover { background: var(--bg4); color: var(--text); }
+.admin-tab.active {
+  background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+  color: #fff;
+  box-shadow: 0 3px 12px rgba(139,92,246,0.35);
+}
+
+.admin-tab-content { display: none; }
+.admin-tab-content.active { display: block; }
+
+/* Section Cards */
+.section-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 20px;
+}
+.section-card-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 20px; flex-wrap: wrap; gap: 10px;
+}
+.section-card-header h3 {
+  font-size: 1.1rem; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.section-icon {
+  width: 32px; height: 32px; border-radius: 8px;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+}
+.icon-purple { background: rgba(139,92,246,0.15); }
+.icon-orange { background: rgba(249,115,22,0.15); }
+.icon-green { background: rgba(34,197,94,0.15); }
+.icon-blue { background: rgba(59,130,246,0.15); }
+
+/* Tables */
+.data-table {
+  width: 100%; border-collapse: collapse;
+  font-size: 0.88rem;
+}
+.data-table th {
+  text-align: left; padding: 10px 14px;
+  background: var(--bg3); color: var(--text2);
+  font-weight: 600; font-size: 0.8rem; text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border);
+}
+.data-table th:first-child { border-radius: var(--radius-sm) 0 0 0; }
+.data-table th:last-child { border-radius: 0 var(--radius-sm) 0 0; }
+.data-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:hover td { background: var(--bg3); }
+.table-wrap { overflow-x: auto; border-radius: var(--radius-sm); border: 1px solid var(--border); }
+
+/* Badges */
+.badge {
+  display: inline-flex; align-items: center;
+  padding: 3px 10px; border-radius: 50px;
+  font-size: 0.75rem; font-weight: 600;
+}
+.badge-purple { background: rgba(139,92,246,0.15); color: var(--purple-light); }
+.badge-orange { background: rgba(249,115,22,0.15); color: var(--orange-light); }
+.badge-green { background: rgba(34,197,94,0.15); color: #4ade80; }
+.badge-blue { background: rgba(59,130,246,0.15); color: #60a5fa; }
+.badge-red { background: rgba(239,68,68,0.15); color: #f87171; }
+
+/* Difficulty badges */
+.diff-beginner { background: rgba(34,197,94,0.15); color: #4ade80; }
+.diff-intermediate { background: rgba(249,115,22,0.15); color: var(--orange-light); }
+.diff-advanced { background: rgba(239,68,68,0.15); color: #f87171; }
+
+/* Inline form */
+.inline-form {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 20px;
+  margin-bottom: 16px;
+}
+.inline-form h4 {
+  font-size: 0.95rem; font-weight: 700;
+  margin-bottom: 16px; color: var(--text);
+  display: flex; align-items: center; gap: 6px;
+}
+.form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.form-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+@media (max-width: 600px) {
+  .form-grid-2, .form-grid-3 { grid-template-columns: 1fr; }
+}
+.form-actions { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+
+/* Assignment section */
+.assign-student-select {
+  display: flex; gap: 12px; align-items: flex-end;
+  flex-wrap: wrap; margin-bottom: 16px;
+}
+.assign-student-select > div { flex: 1; min-width: 200px; }
+.assign-lists {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+}
+@media (max-width: 700px) { .assign-lists { grid-template-columns: 1fr; } }
+.assign-list-box {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 16px;
+}
+.assign-list-box h4 {
+  font-size: 0.9rem; font-weight: 700; margin-bottom: 12px;
+  display: flex; align-items: center; gap: 6px;
+}
+.assign-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 10px; border-radius: var(--radius-sm);
+  border: 1px solid var(--border); margin-bottom: 6px;
+  background: var(--surface); font-size: 0.85rem;
+  transition: all var(--transition);
+}
+.assign-item:hover { border-color: var(--purple); }
+.assign-item-info { flex: 1; }
+.assign-item-title { font-weight: 600; }
+.assign-item-sub { font-size: 0.75rem; color: var(--text3); }
+.assigned-tag {
+  font-size: 0.7rem; padding: 2px 8px; border-radius: 50px;
+  background: rgba(139,92,246,0.15); color: var(--purple-light);
+  font-weight: 600; margin-right: 6px;
+}
+
+/* ============================================================
+   STUDENT DASHBOARD
+   ============================================================ */
+#view-dashboard {
+  min-height: calc(100vh - 64px);
+  padding: 30px 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.dash-welcome {
+  margin-bottom: 28px;
+  display: flex; align-items: center; gap: 16px;
+  flex-wrap: wrap;
+}
+.dash-avatar {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--purple), var(--orange));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; font-weight: 800; color: #fff;
+  flex-shrink: 0;
+}
+.dash-welcome-text h2 {
+  font-size: 1.4rem; font-weight: 800;
+}
+.dash-welcome-text p { color: var(--text2); font-size: 0.9rem; }
+
+/* Progress bar */
+.progress-bar-wrap {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 20px;
+  margin-bottom: 24px;
+}
+.progress-bar-wrap h3 {
+  font-size: 0.9rem; font-weight: 700; color: var(--text2);
+  text-transform: uppercase; letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+.progress-stats {
+  display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 12px;
+}
+.progress-stat {
+  display: flex; flex-direction: column;
+}
+.progress-stat-num {
+  font-size: 1.6rem; font-weight: 800;
+  background: linear-gradient(135deg, var(--purple-light), var(--orange));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.progress-stat-label { font-size: 0.78rem; color: var(--text3); }
+.progress-bar {
+  height: 8px; border-radius: 50px;
+  background: var(--bg4); overflow: hidden;
+}
+.progress-bar-fill {
+  height: 100%; border-radius: 50px;
+  background: linear-gradient(90deg, var(--purple), var(--orange));
+  transition: width 0.6s ease;
+}
+
+/* Student Tabs */
+.dash-tabs {
+  display: flex; gap: 4px;
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 5px;
+  margin-bottom: 24px;
+}
+.dash-tab {
+  flex: 1; padding: 10px 16px; border-radius: var(--radius-sm);
+  border: none; background: transparent;
+  color: var(--text2); font-family: inherit;
+  font-size: 0.9rem; font-weight: 600;
+  cursor: pointer; transition: all var(--transition);
+  text-align: center;
+}
+.dash-tab:hover { background: var(--bg4); color: var(--text); }
+.dash-tab.active {
+  background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+  color: #fff;
+  box-shadow: 0 3px 12px rgba(139,92,246,0.35);
+}
+
+.dash-tab-content { display: none; }
+.dash-tab-content.active { display: block; }
+
+/* Content Cards */
+.content-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  margin-bottom: 14px;
+  transition: all var(--transition);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.content-card::before {
+  content: '';
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--purple), var(--orange));
+  border-radius: 4px 0 0 4px;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.content-card:hover { border-color: var(--purple); box-shadow: var(--shadow); transform: translateY(-2px); }
+.content-card:hover::before { opacity: 1; }
+.content-card.completed { border-color: rgba(34,197,94,0.3); }
+.content-card.completed::before { opacity: 1; background: linear-gradient(180deg, #22c55e, #16a34a); }
+.card-header-row {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 12px; margin-bottom: 8px;
+}
+.card-title { font-size: 1rem; font-weight: 700; }
+.card-subtitle { font-size: 0.82rem; color: var(--text3); margin-top: 2px; }
+.card-meta {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  margin-top: 10px; align-items: center;
+}
+.card-actions {
+  display: flex; gap: 8px; align-items: center;
+  flex-shrink: 0;
+}
+.complete-checkbox {
+  display: flex; align-items: center; gap: 6px;
+  cursor: pointer; font-size: 0.82rem; color: var(--text2);
+  user-select: none;
+}
+.complete-checkbox input[type="checkbox"] {
+  width: 18px; height: 18px; cursor: pointer;
+  accent-color: var(--purple);
+}
+.card-desc { font-size: 0.85rem; color: var(--text2); margin-top: 6px; line-height: 1.5; }
+
+/* Expanded card content */
+.card-expanded {
+  display: none; margin-top: 16px;
+  padding-top: 16px; border-top: 1px solid var(--border);
+}
+.card-expanded.open { display: block; }
+.video-embed {
+  position: relative; padding-bottom: 56.25%;
+  height: 0; overflow: hidden; border-radius: var(--radius-sm);
+  background: #000; margin-bottom: 12px;
+}
+.video-embed iframe {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%; border: none;
+}
+.tabs-text {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 16px;
+  font-family: 'Courier New', monospace; font-size: 0.85rem;
+  white-space: pre-wrap; color: var(--text2);
+  max-height: 300px; overflow-y: auto;
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center; padding: 50px 20px;
+  color: var(--text3);
+}
+.empty-state svg { margin-bottom: 16px; opacity: 0.4; }
+.empty-state h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 6px; color: var(--text2); }
+.empty-state p { font-size: 0.88rem; }
+
+/* ============================================================
+   MODAL
+   ============================================================ */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 200;
+  background: var(--modal-overlay);
+  backdrop-filter: blur(4px);
+  display: none; align-items: center; justify-content: center;
+  padding: 20px;
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  width: 100%; max-width: 480px;
+  box-shadow: var(--shadow-lg);
+  animation: modalIn 0.25s ease;
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.95) translateY(-10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+.modal h3 {
+  font-size: 1.15rem; font-weight: 700; margin-bottom: 20px;
+  display: flex; align-items: center; gap: 8px;
+}
+.modal-actions {
+  display: flex; gap: 10px; margin-top: 20px;
+  justify-content: flex-end; flex-wrap: wrap;
+}
+
+/* ============================================================
+   TOAST NOTIFICATIONS
+   ============================================================ */
+#toast-container {
+  position: fixed; bottom: 24px; right: 24px; z-index: 300;
+  display: flex; flex-direction: column; gap: 8px;
+  max-width: 320px;
+}
+.toast {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 12px 16px;
+  box-shadow: var(--shadow);
+  display: flex; align-items: center; gap: 10px;
+  font-size: 0.88rem; font-weight: 500;
+  animation: toastIn 0.3s ease;
+}
+@keyframes toastIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.toast-success { border-left: 3px solid #22c55e; }
+.toast-error { border-left: 3px solid #ef4444; }
+.toast-info { border-left: 3px solid var(--purple); }
+.toast-icon { font-size: 1.1rem; }
+
+/* ============================================================
+   LOADING SPINNER
+   ============================================================ */
+.spinner {
+  width: 20px; height: 20px;
+  border: 2px solid var(--border);
+  border-top-color: var(--purple);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  #view-admin, #view-dashboard { padding: 20px 14px; }
+  .admin-tabs { flex-direction: column; }
+  .admin-tab { text-align: left; }
+  .section-card { padding: 16px; }
+  .login-card { padding: 24px 18px; }
+  .modal { padding: 20px 16px; }
+  .data-table { font-size: 0.8rem; }
+  .data-table th, .data-table td { padding: 8px 10px; }
+  .header-logo span { display: none; }
+}
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--purple-dark); }
+
+/* ============================================================
+   MISC
+   ============================================================ */
+.divider {
+  height: 1px; background: var(--border); margin: 20px 0;
+}
+.text-purple { color: var(--purple-light); }
+.text-orange { color: var(--orange-light); }
+.text-muted { color: var(--text3); }
+.text-sm { font-size: 0.85rem; }
+.fw-bold { font-weight: 700; }
+.mt-1 { margin-top: 8px; }
+.mt-2 { margin-top: 16px; }
+.flex { display: flex; }
+.items-center { align-items: center; }
+.gap-2 { gap: 8px; }
+.gap-3 { gap: 12px; }
+.w-full { width: 100%; }
+
+/* Admin login page */
+#view-admin-login {
+  min-height: calc(100vh - 64px);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+#view-admin-login.active { display: flex; }
+.admin-login-card {
+  background: var(--card-bg);
+  border: 2px solid var(--purple);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  width: 100%; max-width: 380px;
+  box-shadow: 0 0 40px rgba(139,92,246,0.2);
+}
+.admin-login-card h2 {
+  font-size: 1.3rem; font-weight: 800; text-align: center;
+  margin-bottom: 6px;
+}
+.admin-login-card p {
+  text-align: center; color: var(--text3); font-size: 0.85rem;
+  margin-bottom: 24px;
+}
+.admin-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: rgba(139,92,246,0.15); color: var(--purple-light);
+  border: 1px solid rgba(139,92,246,0.3);
+  border-radius: 50px; padding: 3px 12px;
+  font-size: 0.78rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+/* Chord/tabs display */
+.chord-display {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 14px;
+  font-family: 'Courier New', monospace; font-size: 0.82rem;
+  white-space: pre-wrap; color: var(--text2);
+  max-height: 200px; overflow-y: auto;
+  margin-top: 10px;
+}
+
+/* Song card extra */
+.song-youtube-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 14px; border-radius: 50px;
+  background: rgba(239,68,68,0.12); color: #f87171;
+  border: 1px solid rgba(239,68,68,0.25);
+  font-size: 0.8rem; font-weight: 600;
+  cursor: pointer; transition: all var(--transition);
+  text-decoration: none;
+}
+.song-youtube-btn:hover {
+  background: rgba(239,68,68,0.22); color: #fca5a5;
+  transform: translateY(-1px);
+}
+
+/* Confirm dialog */
+.confirm-dialog {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 24px;
+  width: 100%; max-width: 360px;
+  box-shadow: var(--shadow-lg);
+  animation: modalIn 0.25s ease;
+  text-align: center;
+}
+.confirm-dialog h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
+.confirm-dialog p { color: var(--text2); font-size: 0.88rem; margin-bottom: 20px; }
+.confirm-dialog .modal-actions { justify-content: center; }
+
+/* Student name in table */
+.student-name-cell {
+  display: flex; align-items: center; gap: 8px;
+}
+.student-mini-avatar {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--purple), var(--orange));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.7rem; font-weight: 700; color: #fff;
+  flex-shrink: 0;
+}
+
+/* Tabs chords in admin */
+.tabs-preview {
+  font-family: 'Courier New', monospace; font-size: 0.78rem;
+  color: var(--text3); max-width: 200px;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header id="app-header">
+  <div class="header-logo">
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+      <path d="M18 4C18 4 20 6 20 10C20 14 17 16 17 16L12 21C11 22 9 22 8 21L7 20C6 19 6 17 7 16L12 11C12 11 14 8 14 4C14 2 16 2 18 4Z" fill="url(#g1)" opacity="0.9"/>
+      <circle cx="7.5" cy="20.5" r="2" fill="url(#g1)"/>
+      <rect x="16" y="2" width="2" height="8" rx="1" fill="url(#g2)" transform="rotate(15 16 2)"/>
+      <rect x="18" y="1" width="2" height="6" rx="1" fill="url(#g2)" transform="rotate(15 18 1)"/>
+      <defs>
+        <linearGradient id="g1" x1="0" y1="0" x2="20" y2="28" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#8b5cf6"/><stop offset="1" stop-color="#f97316"/>
+        </linearGradient>
+        <linearGradient id="g2" x1="0" y1="0" x2="20" y2="20" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#a78bfa"/><stop offset="1" stop-color="#fb923c"/>
+        </linearGradient>
+      </defs>
+    </svg>
+    <span>music4all.ru</span>
+  </div>
+  <div class="header-actions">
+    <div id="header-user-info" style="display:none"></div>
+    <button class="theme-toggle" onclick="toggleTheme()" title="Сменить тему">
+      <span id="theme-icon">🌙</span>
+      <span id="theme-label">Тёмная</span>
+    </button>
+    <button id="logout-btn" class="btn btn-ghost btn-sm" onclick="logout()" style="display:none">
+      Выйти
+    </button>
+  </div>
+</header>
+
+<!-- ============================================================
+     MAIN APP
+     ============================================================ -->
+<main id="app-main">
+
+  <!-- ==================== LOGIN VIEW ==================== -->
+  <div id="view-login" class="view active">
+    <div class="hero-bg"></div>
+    <!-- Guitar SVG silhouette -->
+    <svg class="guitar-silhouette" width="320" height="600" viewBox="0 0 320 600" fill="none">
+      <path d="M160 20C160 20 180 40 185 80C190 120 175 150 160 165C145 180 130 200 130 230C130 260 145 280 160 290C175 300 200 310 210 340C220 370 215 410 200 440C185 470 160 490 140 500C120 510 90 510 70 500C50 490 35 470 30 445C25 420 35 395 50 375C65 355 85 345 95 330C105 315 105 295 95 280C85 265 65 255 55 240C45 225 45 205 55 190C65 175 85 170 100 165C115 160 135 150 145 135C155 120 155 95 150 70C145 45 160 20 160 20Z" fill="currentColor" opacity="0.5"/>
+      <circle cx="80" cy="430" r="60" fill="currentColor" opacity="0.3"/>
+      <circle cx="80" cy="430" r="25" fill="currentColor" opacity="0.2"/>
+    </svg>
+
+    <div class="login-container">
+      <div class="login-hero-text">
+        <h1>🎸 music4all.ru</h1>
+        <p>Уроки гитары для всех уровней</p>
+      </div>
+
+      <div class="login-card">
+        <h2>Вход в личный кабинет</h2>
+        <div class="form-group">
+          <label for="login-phone">Номер телефона</label>
+          <input type="tel" id="login-phone" placeholder="+7 (999) 123-45-67" autocomplete="tel">
+        </div>
+        <div class="form-group">
+          <label for="login-password">Пароль</label>
+          <input type="password" id="login-password" placeholder="Введите пароль" autocomplete="current-password"
+                 onkeydown="if(event.key==='Enter') doLogin()">
+        </div>
+        <button class="btn btn-primary w-full" onclick="doLogin()" style="justify-content:center; margin-top:8px">
+          Войти
+        </button>
+        <div class="login-footer">
+          <a href="#" onclick="showView('admin-login'); return false;">Вход для администратора →</a>
+        </div>
+      </div>
+
+      <div class="fretboard-deco">
+        <div class="fret"></div><div class="fret"></div><div class="fret"></div>
+        <div class="fret"></div><div class="fret"></div><div class="fret"></div>
+      </div>
+      <p style="text-align:center; font-size:0.78rem; color:var(--text3)">
+        Нет аккаунта? Обратитесь к преподавателю.
+      </p>
+    </div>
+  </div>
+
+  <!-- ==================== ADMIN LOGIN VIEW ==================== -->
+  <div id="view-admin-login" class="view">
+    <div class="admin-login-card">
+      <div style="text-align:center; margin-bottom:16px">
+        <div class="admin-badge">🔐 Администратор</div>
+      </div>
+      <h2>Вход для администратора</h2>
+      <p>Панель управления music4all.ru</p>
+      <div class="form-group">
+        <label for="admin-phone">Телефон администратора</label>
+        <input type="tel" id="admin-phone" placeholder="+79991234567">
+      </div>
+      <div class="form-group">
+        <label for="admin-password">Пароль</label>
+        <input type="password" id="admin-password" placeholder="Пароль администратора"
+               onkeydown="if(event.key==='Enter') doAdminLogin()">
+      </div>
+      <button class="btn btn-primary w-full" onclick="doAdminLogin()" style="justify-content:center; margin-top:8px">
+        Войти как администратор
+      </button>
+      <div style="text-align:center; margin-top:16px">
+        <a href="#" onclick="showView('login'); return false;" style="font-size:0.82rem; color:var(--text3)">
+          ← Вернуться к входу для учеников
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== ADMIN PANEL VIEW ==================== -->
+  <div id="view-admin" class="view">
+    <div class="admin-welcome">
+      <h2>🎛️ Панель администратора</h2>
+      <p id="admin-welcome-sub">Управление учениками, уроками и песнями</p>
+    </div>
+
+    <div class="admin-tabs">
+      <button class="admin-tab active" onclick="switchAdminTab('students')">👥 Ученики</button>
+      <button class="admin-tab" onclick="switchAdminTab('lessons')">📚 Уроки</button>
+      <button class="admin-tab" onclick="switchAdminTab('songs')">🎵 Песни</button>
+      <button class="admin-tab" onclick="switchAdminTab('assignments')">📋 Назначения</button>
+    </div>
+
+    <!-- TAB: STUDENTS -->
+    <div id="admin-tab-students" class="admin-tab-content active">
+      <div class="section-card">
+        <div class="section-card-header">
+          <h3><span class="section-icon icon-purple">👤</span> Список учеников</h3>
+          <button class="btn btn-primary btn-sm" onclick="openStudentModal()">+ Добавить ученика</button>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table" id="students-table">
+            <thead>
+              <tr>
+                <th>Имя</th>
+                <th>Телефон</th>
+                <th>Уроков</th>
+                <th>Песен</th>
+                <th>Дата создания</th>
+                <th>Действия</th>
+              </tr>
+            </thead>
+            <tbody id="students-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: LESSONS -->
+    <div id="admin-tab-lessons" class="admin-tab-content">
+      <div class="section-card">
+        <div class="section-card-header">
+          <h3><span class="section-icon icon-orange">📖</span> Добавить урок</h3>
+        </div>
+        <div class="inline-form">
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label>Название урока *</label>
+              <input type="text" id="lesson-title" placeholder="Например: Основы игры на гитаре">
+            </div>
+            <div class="form-group">
+              <label>Ссылка на видео (YouTube)</label>
+              <input type="url" id="lesson-video" placeholder="https://youtube.com/watch?v=...">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Описание</label>
+            <textarea id="lesson-desc" placeholder="Краткое описание урока..."></textarea>
+          </div>
+          <div class="form-group">
+            <label>Ссылка на PDF материалы</label>
+            <input type="url" id="lesson-pdf" placeholder="https://...">
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-primary" onclick="saveLesson()">💾 Сохранить урок</button>
+            <button class="btn btn-ghost" onclick="clearLessonForm()">Очистить</button>
+          </div>
+          <input type="hidden" id="lesson-edit-id">
+        </div>
+      </div>
+      <div class="section-card">
+        <div class="section-card-header">
+          <h3><span class="section-icon icon-blue">📚</span> Все уроки</h3>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr><th>Название</th><th>Описание</th><th>Видео</th><th>PDF</th><th>Действия</th></tr>
+            </thead>
+            <tbody id="lessons-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: SONGS -->
+    <div id="admin-tab-songs" class="admin-tab-content">
+      <div class="section-card">
+        <div class="section-card-header">
+          <h3><span class="section-icon icon-orange">🎸</span> Добавить песню</h3>
+        </div>
+        <div class="inline-form">
+          <div class="form-grid-3">
+            <div class="form-group">
+              <label>Название песни *</label>
+              <input type="text" id="song-title" placeholder="Название">
+            </div>
+            <div class="form-group">
+              <label>Исполнитель *</label>
+              <input type="text" id="song-artist" placeholder="Исполнитель">
+            </div>
+            <div class="form-group">
+              <label>Уровень сложности</label>
+              <select id="song-difficulty">
+                <option value="beginner">Начинающий</option>
+                <option value="intermediate">Средний</option>
+                <option value="advanced">Продвинутый</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Ссылка на YouTube</label>
+            <input type="url" id="song-youtube" placeholder="https://youtube.com/watch?v=...">
+          </div>
+          <div class="form-group">
+            <label>Аккорды / Табулатуры (текст)</label>
+            <textarea id="song-tabs" placeholder="Am  Dm  E  Am&#10;Текст куплета...&#10;&#10;Am  F  C  G&#10;Текст припева..." style="min-height:120px; font-family:monospace"></textarea>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-primary" onclick="saveSong()">💾 Сохранить песню</button>
+            <button class="btn btn-ghost" onclick="clearSongForm()">Очистить</button>
+          </div>
+          <input type="hidden" id="song-edit-id">
+        </div>
+      </div>
+      <div class="section-card">
+        <div class="section-card-header">
+          <h3><span class="section-icon icon-green">🎵</span> Все песни</h3>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr><th>Название</th><th>Исполнитель</th><th>Сложность</th><th>YouTube</th><th>Аккорды</th><th>Действия</th></tr>
+            </thead>
+            <tbody id="songs-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: ASSIGNMENTS -->
+    <div id="admin-tab-assignments" class="admin-tab-content">
+      <div class="section-card">
+        <div class="section-card-header">
+          <h3><span class="section-icon icon-purple">📋</span> Назначения для учеников</h3>
+        </div>
+        <div class="assign-student-select">
+          <div>
+            <label>Выберите ученика</label>
+            <select id="assign-student-select" onchange="loadAssignments()">
+              <option value="">— Выберите ученика —</option>
+            </select>
+          </div>
+        </div>
+        <div id="assign-content" style="display:none">
+          <div class="assign-lists">
+            <!-- Lessons assignment -->
+            <div class="assign-list-box">
+              <h4>📚 Уроки</h4>
+              <div id="assign-lessons-list"></div>
+            </div>
+            <!-- Songs assignment -->
+            <div class="assign-list-box">
+              <h4>🎵 Песни</h4>
+              <div id="assign-songs-list"></div>
+            </div>
+          </div>
+        </div>
+        <div id="assign-placeholder" style="text-align:center; padding:30px; color:var(--text3)">
+          Выберите ученика для управления назначениями
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== STUDENT DASHBOARD VIEW ==================== -->
+  <div id="view-dashboard" class="view">
+    <div class="dash-welcome">
+      <div class="dash-avatar" id="dash-avatar">И</div>
+      <div class="dash-welcome-text">
+        <h2 id="dash-name">Привет, Ученик!</h2>
+        <p id="dash-subtitle">Продолжай учиться — ты молодец! 🎸</p>
+      </div>
+    </div>
+
+    <!-- Progress -->
+    <div class="progress-bar-wrap">
+      <h3>📊 Мой прогресс</h3>
+      <div class="progress-stats">
+        <div class="progress-stat">
+          <span class="progress-stat-num" id="prog-completed">0</span>
+          <span class="progress-stat-label">Выполнено</span>
+        </div>
+        <div class="progress-stat">
+          <span class="progress-stat-num" id="prog-total">0</span>
+          <span class="progress-stat-label">Всего заданий</span>
+        </div>
+        <div class="progress-stat">
+          <span class="progress-stat-num" id="prog-pct">0%</span>
+          <span class="progress-stat-label">Прогресс</span>
+        </div>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-bar-fill" id="prog-bar" style="width:0%"></div>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="dash-tabs">
+      <button class="dash-tab active" onclick="switchDashTab('lessons')">📚 Мои уроки</button>
+      <button class="dash-tab" onclick="switchDashTab('songs')">🎵 Мои песни</button>
+    </div>
+
+    <div id="dash-tab-lessons" class="dash-tab-content active">
+      <div id="student-lessons-list"></div>
+    </div>
+    <div id="dash-tab-songs" class="dash-tab-content">
+      <div id="student-songs-list"></div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ============================================================
+     MODAL: ADD/EDIT STUDENT
+     ============================================================ -->
+<div class="modal-overlay" id="student-modal">
+  <div class="modal">
+    <h3 id="student-modal-title">👤 Добавить ученика</h3>
+    <div class="form-group">
+      <label>Имя ученика *</label>
+      <input type="text" id="modal-student-name" placeholder="Иван Петров">
+    </div>
+    <div class="form-group">
+      <label>Номер телефона *</label>
+      <input type="tel" id="modal-student-phone" placeholder="+79161234567">
+    </div>
+    <div class="form-group">
+      <label>Пароль *</label>
+      <input type="text" id="modal-student-password" placeholder="Придумайте пароль">
+    </div>
+    <input type="hidden" id="modal-student-id">
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeStudentModal()">Отмена</button>
+      <button class="btn btn-primary" onclick="saveStudent()">💾 Сохранить</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     MODAL: CONFIRM DELETE
+     ============================================================ -->
+<div class="modal-overlay" id="confirm-modal">
+  <div class="confirm-dialog">
+    <h3>⚠️ Подтверждение</h3>
+    <p id="confirm-message">Вы уверены, что хотите удалить этот элемент?</p>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeConfirm()">Отмена</button>
+      <button class="btn btn-danger" id="confirm-ok-btn">Удалить</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     TOAST CONTAINER
+     ============================================================ -->
+<div id="toast-container"></div>
+
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
+<script>
+'use strict';
+
+// ============================================================
+// CONSTANTS & CONFIG
+// ============================================================
+const STORAGE_KEYS = {
+  users: 'm4a_users',
+  lessons: 'm4a_lessons',
+  songs: 'm4a_songs',
+  assignments: 'm4a_assignments',
+  progress: 'm4a_progress',
+  session: 'm4a_session',
+  theme: 'm4a_theme',
+  initialized: 'm4a_initialized'
+};
+
+const DIFFICULTY_LABELS = {
+  beginner: 'Начинающий',
+  intermediate: 'Средний',
+  advanced: 'Продвинутый'
+};
+
+const DIFFICULTY_BADGE = {
+  beginner: 'diff-beginner',
+  intermediate: 'diff-intermediate',
+  advanced: 'diff-advanced'
+};
+
+// ============================================================
+// STORAGE HELPERS
+// ============================================================
+const db = {
+  get: (key) => { try { return JSON.parse(localStorage.getItem(key)) || []; } catch { return []; } },
+  getObj: (key) => { try { return JSON.parse(localStorage.getItem(key)) || null; } catch { return null; } },
+  set: (key, val) => localStorage.setItem(key, JSON.stringify(val)),
+  getUsers: () => db.get(STORAGE_KEYS.users),
+  getLessons: () => db.get(STORAGE_KEYS.lessons),
+  getSongs: () => db.get(STORAGE_KEYS.songs),
+  getAssignments: () => db.get(STORAGE_KEYS.assignments),
+  getProgress: () => db.get(STORAGE_KEYS.progress),
+  getSession: () => db.getObj(STORAGE_KEYS.session),
+  setSession: (s) => db.set(STORAGE_KEYS.session, s),
+  clearSession: () => localStorage.removeItem(STORAGE_KEYS.session),
+};
+
+// ============================================================
+// UUID GENERATOR
+// ============================================================
+function uuid() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+    const r = Math.random() * 16 | 0;
+    return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+  });
+}
+
+// ============================================================
+// PASSWORD HASHING (demo – base64 simulation)
+// ============================================================
+function hashPassword(phone, password) {
+  const raw = phone + ':' + password + ':m4a_salt_2024';
+  return btoa(unescape(encodeURIComponent(raw)));
+}
+
+function checkPassword(phone, password, hash) {
+  return hashPassword(phone, password) === hash;
+}
+
+// ============================================================
+// SAMPLE DATA INITIALIZATION
+// ============================================================
+function initSampleData() {
+  if (localStorage.getItem(STORAGE_KEYS.initialized)) return;
+
+  // Admin user
+  const adminId = uuid();
+  const student1Id = uuid();
+  const student2Id = uuid();
+
+  const users = [
+    {
+      id: adminId,
+      role: 'admin',
+      phone: '+79991234567',
+      passwordHash: hashPassword('+79991234567', 'admin123'),
+      name: 'Администратор',
+      createdAt: new Date().toISOString()
+    },
+    {
+      id: student1Id,
+      role: 'student',
+      phone: '+79161234567',
+      passwordHash: hashPassword('+79161234567', 'student1'),
+      name: 'Иван Петров',
+      createdAt: new Date().toISOString()
+    },
+    {
+      id: student2Id,
+      role: 'student',
+      phone: '+79261234568',
+      passwordHash: hashPassword('+79261234568', 'student2'),
+      name: 'Мария Сидорова',
+      createdAt: new Date().toISOString()
+    }
+  ];
+
+  const lesson1Id = uuid();
+  const lesson2Id = uuid();
+  const lesson3Id = uuid();
+
+  const lessons = [
+    {
+      id: lesson1Id,
+      title: 'Основы игры на гитаре',
+      description: 'Знакомство с инструментом: как держать гитару, правильная посадка, настройка по тюнеру, первые упражнения для пальцев.',
+      videoUrl: 'https://www.youtube.com/watch?v=BBz-Jyr23M4',
+      pdfUrl: '',
+      createdAt: new Date().toISOString()
+    },
+    {
+      id: lesson2Id,
+      title: 'Аккорды Am, Dm, E',
+      description: 'Три основных минорных аккорда для начинающих. Постановка пальцев, переходы между аккордами, упражнения на скорость.',
+      videoUrl: 'https://www.youtube.com/watch?v=Ry5WBjCWtGs',
+      pdfUrl: '',
+      createdAt: new Date().toISOString()
+    },
+    {
+      id: lesson3Id,
+      title: 'Перебор и бой',
+      description: 'Базовые ритмические рисунки: простой перебор 6-струнный, бой "шестёрка", бой с приглушением. Практика под метроном.',
+      videoUrl: 'https://www.youtube.com/watch?v=DdlkDfFkRxI',
+      pdfUrl: '',
+      createdAt: new Date().toISOString()
+    }
+  ];
+
+  const song1Id = uuid();
+  const song2Id = uuid();
+  const song3Id = uuid();
+
+  const songs = [
+    {
+      id: song1Id,
+      title: 'Звезда по имени Солнце',
+      artist: 'Кино',
+      difficulty: 'beginner',
+      youtubeUrl: 'https://www.youtube.com/watch?v=Ry5WBjCWtGs',
+      tabsChords: `Тональность: Am
+
+КУПЛЕТ:
+Am              Dm
+Белый снег, серый лёд,
+E               Am
+На растрескавшейся земле.
+Am              Dm
+Одинокий, как волк,
+E               Am
+Стоит, задрав голову к небу.
+
+ПРИПЕВ:
+F               C
+И две тысячи лет — война,
+G               Am
+Война без особых причин.
+F               C
+Война — дело молодых,
+G               E
+Лекарство против морщин.
+
+Am  Dm  E  Am  (x2)
+
+АККОРДЫ:
+Am: x02210
+Dm: xx0231
+E:  022100
+F:  133211
+C:  x32010
+G:  320003`,
+      createdAt: new Date().toISOString()
+    },
+    {
+      id: song2Id,
+      title: 'Группа крови',
+      artist: 'Кино',
+      difficulty: 'intermediate',
+      youtubeUrl: 'https://www.youtube.com/watch?v=BBz-Jyr23M4',
+      tabsChords: `Тональность: Am (Capo 0)
+
+ВСТУПЛЕНИЕ:
+Am  G  Dm  E  (x2)
+
+КУПЛЕТ:
+Am          G
+Тёплое место, но улицы ждут
+Dm              E
+Отпечатков наших ног.
+Am          G
+Звёздная пыль — на сапогах,
+Dm              E
+Мягкое кресло, клетчатый плед.
+
+ПРИПЕВ:
+Am      G
+Группа крови — на рукаве,
+Dm      E
+Мой порядковый номер — на рукаве.
+Am      G
+Пожелай мне удачи в бою,
+Dm          E       Am
+Пожелай мне: не остаться в этой траве.
+
+АККОРДЫ:
+Am: x02210
+G:  320003
+Dm: xx0231
+E:  022100`,
+      createdAt: new Date().toISOString()
+    },
+    {
+      id: song3Id,
+      title: 'Wonderwall',
+      artist: 'Oasis',
+      difficulty: 'intermediate',
+      youtubeUrl: 'https://www.youtube.com/watch?v=bx1Bh8ZvH84',
+      tabsChords: `Тональность: Em (Capo 2)
+
+ВСТУПЛЕНИЕ:
+Em7  G  Dsus4  A7sus4  (x2)
+
+КУПЛЕТ:
+Em7             G
+Today is gonna be the day
+Dsus4               A7sus4
+That they're gonna throw it back to you.
+Em7             G
+By now you should've somehow
+Dsus4               A7sus4
+Realized what you gotta do.
+
+ПРИПЕВ:
+C           D
+And all the roads we have to walk are winding,
+Em              D
+And all the lights that lead us there are blinding.
+C       D           G       A7sus4
+There are many things that I would like to say to you
+        Em
+But I don't know how.
+
+G   Em7   G   Em7
+
+АККОРДЫ (с капо на 2 ладу):
+Em7:    022033
+G:      320033
+Dsus4:  xx0233
+A7sus4: x02033
+C:      x32010
+D:      xx0232`,
+      createdAt: new Date().toISOString()
+    }
+  ];
+
+  // Assignments
+  // Ivan: Lesson1, Lesson2, Song1, Song2
+  // Maria: Lesson2, Lesson3, Song2, Song3
+  const assignments = [
+    { id: uuid(), studentId: student1Id, type: 'lesson', contentId: lesson1Id, assignedAt: new Date().toISOString() },
+    { id: uuid(), studentId: student1Id, type: 'lesson', contentId: lesson2Id, assignedAt: new Date().toISOString() },
+    { id: uuid(), studentId: student1Id, type: 'song', contentId: song1Id, assignedAt: new Date().toISOString() },
+    { id: uuid(), studentId: student1Id, type: 'song', contentId: song2Id, assignedAt: new Date().toISOString() },
+    { id: uuid(), studentId: student2Id, type: 'lesson', contentId: lesson2Id, assignedAt: new Date().toISOString() },
+    { id: uuid(), studentId: student2Id, type: 'lesson', contentId: lesson3Id, assignedAt: new Date().toISOString() },
+    { id: uuid(), studentId: student2Id, type: 'song', contentId: song2Id, assignedAt: new Date().toISOString() },
+    { id: uuid(), studentId: student2Id, type: 'song', contentId: song3Id, assignedAt: new Date().toISOString() },
+  ];
+
+  db.set(STORAGE_KEYS.users, users);
+  db.set(STORAGE_KEYS.lessons, lessons);
+  db.set(STORAGE_KEYS.songs, songs);
+  db.set(STORAGE_KEYS.assignments, assignments);
+  db.set(STORAGE_KEYS.progress, []);
+  localStorage.setItem(STORAGE_KEYS.initialized, '1');
+}
+
+// ============================================================
+// THEME
+// ============================================================
+function initTheme() {
+  const saved = localStorage.getItem(STORAGE_KEYS.theme) || 'dark';
+  applyTheme(saved);
+}
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem(STORAGE_KEYS.theme, theme);
+  const icon = document.getElementById('theme-icon');
+  const label = document.getElementById('theme-label');
+  if (theme === 'dark') { icon.textContent = '🌙'; label.textContent = 'Тёмная'; }
+  else { icon.textContent = '☀️'; label.textContent = 'Светлая'; }
+}
+
+function toggleTheme() {
+  const current = document.documentElement.getAttribute('data-theme');
+  applyTheme(current === 'dark' ? 'light' : 'dark');
+}
+
+// ============================================================
+// VIEW ROUTING
+// ============================================================
+function showView(name) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  const el = document.getElementById('view-' + name);
+  if (el) el.classList.add('active');
+}
+
+// ============================================================
+// HEADER STATE
+// ============================================================
+function updateHeader(session) {
+  const userInfo = document.getElementById('header-user-info');
+  const logoutBtn = document.getElementById('logout-btn');
+  if (session) {
+    const initials = session.name.split(' ').map(w => w[0]).join('').slice(0,2).toUpperCase();
+    userInfo.innerHTML = `
+      <div class="user-badge">
+        <div class="user-avatar">${initials}</div>
+        <span>${session.name}</span>
+        ${session.role === 'admin' ? '<span class="badge badge-purple" style="margin-left:4px">Admin</span>' : ''}
+      </div>`;
+    userInfo.style.display = 'block';
+    logoutBtn.style.display = 'inline-flex';
+  } else {
+    userInfo.style.display = 'none';
+    logoutBtn.style.display = 'none';
+  }
+}
+
+// ============================================================
+// AUTHENTICATION
+// ============================================================
+function doLogin() {
+  const phone = document.getElementById('login-phone').value.trim();
+  const password = document.getElementById('login-password').value;
+  if (!phone || !password) { showToast('Заполните все поля', 'error'); return; }
+
+  const users = db.getUsers();
+  const user = users.find(u => u.phone === phone && u.role === 'student');
+  if (!user) { showToast('Ученик с таким телефоном не найден', 'error'); return; }
+  if (!checkPassword(phone, password, user.passwordHash)) {
+    showToast('Неверный пароль', 'error'); return;
+  }
+
+  const session = { userId: user.id, role: 'student', name: user.name };
+  db.setSession(session);
+  updateHeader(session);
+  loadStudentDashboard(user);
+  showView('dashboard');
+  showToast(`Добро пожаловать, ${user.name}! 🎸`, 'success');
+}
+
+function doAdminLogin() {
+  const phone = document.getElementById('admin-phone').value.trim();
+  const password = document.getElementById('admin-password').value;
+  if (!phone || !password) { showToast('Заполните все поля', 'error'); return; }
+
+  const users = db.getUsers();
+  const user = users.find(u => u.phone === phone && u.role === 'admin');
+  if (!user) { showToast('Администратор не найден', 'error'); return; }
+  if (!checkPassword(phone, password, user.passwordHash)) {
+    showToast('Неверный пароль', 'error'); return;
+  }
+
+  const session = { userId: user.id, role: 'admin', name: user.name };
+  db.setSession(session);
+  updateHeader(session);
+  loadAdminPanel();
+  showView('admin');
+  showToast('Добро пожаловать в панель администратора!', 'success');
+}
+
+function logout() {
+  db.clearSession();
+  updateHeader(null);
+  document.getElementById('login-phone').value = '';
+  document.getElementById('login-password').value = '';
+  showView('login');
+  showToast('Вы вышли из системы', 'info');
+}
+
+// ============================================================
+// SESSION RESTORE
+// ============================================================
+function restoreSession() {
+  const session = db.getSession();
+  if (!session) { showView('login'); return; }
+  updateHeader(session);
+  if (session.role === 'admin') {
+    loadAdminPanel();
+    showView('admin');
+  } else {
+    const users = db.getUsers();
+    const user = users.find(u => u.id === session.userId);
+    if (user) {
+      loadStudentDashboard(user);
+      showView('dashboard');
+    } else {
+      db.clearSession();
+      showView('login');
+    }
+  }
+}
+
+// ============================================================
+// ADMIN PANEL – TAB SWITCHING
+// ============================================================
+function switchAdminTab(tab) {
+  document.querySelectorAll('.admin-tab').forEach((t, i) => {
+    const tabs = ['students','lessons','songs','assignments'];
+    t.classList.toggle('active', tabs[i] === tab);
+  });
+  document.querySelectorAll('.admin-tab-content').forEach(c => c.classList.remove('active'));
+  document.getElementById('admin-tab-' + tab).classList.add('active');
+}
+
+// ============================================================
+// ADMIN PANEL – LOAD ALL DATA
+// ============================================================
+function loadAdminPanel() {
+  renderStudentsTable();
+  renderLessonsTable();
+  renderSongsTable();
+  populateAssignStudentSelect();
+}
+
+// ============================================================
+// ADMIN – STUDENTS
+// ============================================================
+function renderStudentsTable() {
+  const users = db.getUsers().filter(u => u.role === 'student');
+  const assignments = db.getAssignments();
+  const tbody = document.getElementById('students-tbody');
+  if (users.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;padding:30px;color:var(--text3)">Нет учеников. Добавьте первого ученика.</td></tr>`;
+    return;
+  }
+  tbody.innerHTML = users.map(u => {
+    const lessonCount = assignments.filter(a => a.studentId === u.id && a.type === 'lesson').length;
+    const songCount = assignments.filter(a => a.studentId === u.id && a.type === 'song').length;
+    const initials = u.name.split(' ').map(w => w[0]).join('').slice(0,2).toUpperCase();
+    const date = new Date(u.createdAt).toLocaleDateString('ru-RU');
+    return `<tr>
+      <td>
+        <div class="student-name-cell">
+          <div class="student-mini-avatar">${initials}</div>
+          <span class="fw-bold">${esc(u.name)}</span>
+        </div>
+      </td>
+      <td><code style="font-size:0.82rem;color:var(--text2)">${esc(u.phone)}</code></td>
+      <td><span class="badge badge-blue">${lessonCount}</span></td>
+      <td><span class="badge badge-orange">${songCount}</span></td>
+      <td class="text-muted text-sm">${date}</td>
+      <td>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="openStudentModal('${u.id}')">✏️ Изменить</button>
+          <button class="btn btn-danger btn-xs" onclick="confirmDelete('student','${u.id}','${esc(u.name)}')">🗑️</button>
+        </div>
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+function openStudentModal(id = null) {
+  document.getElementById('modal-student-id').value = id || '';
+  if (id) {
+    const user = db.getUsers().find(u => u.id === id);
+    document.getElementById('student-modal-title').textContent = '✏️ Редактировать ученика';
+    document.getElementById('modal-student-name').value = user.name;
+    document.getElementById('modal-student-phone').value = user.phone;
+    document.getElementById('modal-student-password').value = '';
+    document.getElementById('modal-student-password').placeholder = 'Оставьте пустым, чтобы не менять';
+  } else {
+    document.getElementById('student-modal-title').textContent = '👤 Добавить ученика';
+    document.getElementById('modal-student-name').value = '';
+    document.getElementById('modal-student-phone').value = '';
+    document.getElementById('modal-student-password').value = '';
+    document.getElementById('modal-student-password').placeholder = 'Придумайте пароль';
+  }
+  document.getElementById('student-modal').classList.add('open');
+}
+
+function closeStudentModal() {
+  document.getElementById('student-modal').classList.remove('open');
+}
+
+function saveStudent() {
+  const id = document.getElementById('modal-student-id').value;
+  const name = document.getElementById('modal-student-name').value.trim();
+  const phone = document.getElementById('modal-student-phone').value.trim();
+  const password = document.getElementById('modal-student-password').value;
+
+  if (!name || !phone) { showToast('Имя и телефон обязательны', 'error'); return; }
+  if (!id && !password) { showToast('Пароль обязателен для нового ученика', 'error'); return; }
+
+  let users = db.getUsers();
+
+  if (id) {
+    // Edit
+    users = users.map(u => {
+      if (u.id !== id) return u;
+      const updated = { ...u, name, phone };
+      if (password) updated.passwordHash = hashPassword(phone, password);
+      return updated;
+    });
+    showToast('Данные ученика обновлены', 'success');
+  } else {
+    // Check duplicate phone
+    if (users.find(u => u.phone === phone)) {
+      showToast('Телефон уже зарегистрирован', 'error'); return;
+    }
+    users.push({
+      id: uuid(), role: 'student', phone, name,
+      passwordHash: hashPassword(phone, password),
+      createdAt: new Date().toISOString()
+    });
+    showToast(`Ученик ${name} добавлен`, 'success');
+  }
+
+  db.set(STORAGE_KEYS.users, users);
+  closeStudentModal();
+  renderStudentsTable();
+  populateAssignStudentSelect();
+}
+
+// ============================================================
+// ADMIN – LESSONS
+// ============================================================
+function renderLessonsTable() {
+  const lessons = db.getLessons();
+  const tbody = document.getElementById('lessons-tbody');
+  if (lessons.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="5" style="text-align:center;padding:30px;color:var(--text3)">Уроков пока нет.</td></tr>`;
+    return;
+  }
+  tbody.innerHTML = lessons.map(l => `<tr>
+    <td class="fw-bold">${esc(l.title)}</td>
+    <td class="text-muted text-sm" style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(l.description)}</td>
+    <td>${l.videoUrl ? `<a href="${esc(l.videoUrl)}" target="_blank" class="badge badge-red">▶ YouTube</a>` : '<span class="text-muted">—</span>'}</td>
+    <td>${l.pdfUrl ? `<a href="${esc(l.pdfUrl)}" target="_blank" class="badge badge-blue">📄 PDF</a>` : '<span class="text-muted">—</span>'}</td>
+    <td>
+      <div style="display:flex;gap:6px">
+        <button class="btn btn-ghost btn-xs" onclick="editLesson('${l.id}')">✏️</button>
+        <button class="btn btn-danger btn-xs" onclick="confirmDelete('lesson','${l.id}','${esc(l.title)}')">🗑️</button>
+      </div>
+    </td>
+  </tr>`).join('');
+}
+
+function saveLesson() {
+  const id = document.getElementById('lesson-edit-id').value;
+  const title = document.getElementById('lesson-title').value.trim();
+  const description = document.getElementById('lesson-desc').value.trim();
+  const videoUrl = document.getElementById('lesson-video').value.trim();
+  const pdfUrl = document.getElementById('lesson-pdf').value.trim();
+
+  if (!title) { showToast('Название урока обязательно', 'error'); return; }
+
+  let lessons = db.getLessons();
+  if (id) {
+    lessons = lessons.map(l => l.id === id ? { ...l, title, description, videoUrl, pdfUrl } : l);
+    showToast('Урок обновлён', 'success');
+  } else {
+    lessons.push({ id: uuid(), title, description, videoUrl, pdfUrl, createdAt: new Date().toISOString() });
+    showToast(`Урок "${title}" добавлен`, 'success');
+  }
+  db.set(STORAGE_KEYS.lessons, lessons);
+  clearLessonForm();
+  renderLessonsTable();
+  loadAssignments();
+}
+
+function editLesson(id) {
+  const l = db.getLessons().find(x => x.id === id);
+  if (!l) return;
+  document.getElementById('lesson-edit-id').value = l.id;
+  document.getElementById('lesson-title').value = l.title;
+  document.getElementById('lesson-desc').value = l.description;
+  document.getElementById('lesson-video').value = l.videoUrl;
+  document.getElementById('lesson-pdf').value = l.pdfUrl;
+  switchAdminTab('lessons');
+  document.getElementById('lesson-title').focus();
+  showToast('Редактирование урока...', 'info');
+}
+
+function clearLessonForm() {
+  document.getElementById('lesson-edit-id').value = '';
+  document.getElementById('lesson-title').value = '';
+  document.getElementById('lesson-desc').value = '';
+  document.getElementById('lesson-video').value = '';
+  document.getElementById('lesson-pdf').value = '';
+}
+
+// ============================================================
+// ADMIN – SONGS
+// ============================================================
+function renderSongsTable() {
+  const songs = db.getSongs();
+  const tbody = document.getElementById('songs-tbody');
+  if (songs.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;padding:30px;color:var(--text3)">Песен пока нет.</td></tr>`;
+    return;
+  }
+  tbody.innerHTML = songs.map(s => `<tr>
+    <td class="fw-bold">${esc(s.title)}</td>
+    <td class="text-muted">${esc(s.artist)}</td>
+    <td><span class="badge ${DIFFICULTY_BADGE[s.difficulty]}">${DIFFICULTY_LABELS[s.difficulty]}</span></td>
+    <td>${s.youtubeUrl ? `<a href="${esc(s.youtubeUrl)}" target="_blank" class="badge badge-red">▶ YouTube</a>` : '<span class="text-muted">—</span>'}</td>
+    <td><div class="tabs-preview">${esc(s.tabsChords || '—')}</div></td>
+    <td>
+      <div style="display:flex;gap:6px">
+        <button class="btn btn-ghost btn-xs" onclick="editSong('${s.id}')">✏️</button>
+        <button class="btn btn-danger btn-xs" onclick="confirmDelete('song','${s.id}','${esc(s.title)}')">🗑️</button>
+      </div>
+    </td>
+  </tr>`).join('');
+}
+
+function saveSong() {
+  const id = document.getElementById('song-edit-id').value;
+  const title = document.getElementById('song-title').value.trim();
+  const artist = document.getElementById('song-artist').value.trim();
+  const difficulty = document.getElementById('song-difficulty').value;
+  const youtubeUrl = document.getElementById('song-youtube').value.trim();
+  const tabsChords = document.getElementById('song-tabs').value.trim();
+
+  if (!title || !artist) { showToast('Название и исполнитель обязательны', 'error'); return; }
+
+  let songs = db.getSongs();
+  if (id) {
+    songs = songs.map(s => s.id === id ? { ...s, title, artist, difficulty, youtubeUrl, tabsChords } : s);
+    showToast('Песня обновлена', 'success');
+  } else {
+    songs.push({ id: uuid(), title, artist, difficulty, youtubeUrl, tabsChords, createdAt: new Date().toISOString() });
+    showToast(`Песня "${title}" добавлена`, 'success');
+  }
+  db.set(STORAGE_KEYS.songs, songs);
+  clearSongForm();
+  renderSongsTable();
+  loadAssignments();
+}
+
+function editSong(id) {
+  const s = db.getSongs().find(x => x.id === id);
+  if (!s) return;
+  document.getElementById('song-edit-id').value = s.id;
+  document.getElementById('song-title').value = s.title;
+  document.getElementById('song-artist').value = s.artist;
+  document.getElementById('song-difficulty').value = s.difficulty;
+  document.getElementById('song-youtube').value = s.youtubeUrl;
+  document.getElementById('song-tabs').value = s.tabsChords;
+  switchAdminTab('songs');
+  document.getElementById('song-title').focus();
+  showToast('Редактирование песни...', 'info');
+}
+
+function clearSongForm() {
+  document.getElementById('song-edit-id').value = '';
+  document.getElementById('song-title').value = '';
+  document.getElementById('song-artist').value = '';
+  document.getElementById('song-difficulty').value = 'beginner';
+  document.getElementById('song-youtube').value = '';
+  document.getElementById('song-tabs').value = '';
+}
+
+// ============================================================
+// ADMIN – ASSIGNMENTS
+// ============================================================
+function populateAssignStudentSelect() {
+  const sel = document.getElementById('assign-student-select');
+  const students = db.getUsers().filter(u => u.role === 'student');
+  const current = sel.value;
+  sel.innerHTML = '<option value="">— Выберите ученика —</option>' +
+    students.map(s => `<option value="${s.id}" ${s.id === current ? 'selected' : ''}>${esc(s.name)}</option>`).join('');
+}
+
+function loadAssignments() {
+  const studentId = document.getElementById('assign-student-select').value;
+  const content = document.getElementById('assign-content');
+  const placeholder = document.getElementById('assign-placeholder');
+
+  if (!studentId) {
+    content.style.display = 'none';
+    placeholder.style.display = 'block';
+    return;
+  }
+  content.style.display = 'block';
+  placeholder.style.display = 'none';
+
+  const assignments = db.getAssignments();
+  const lessons = db.getLessons();
+  const songs = db.getSongs();
+
+  const assignedLessonIds = assignments.filter(a => a.studentId === studentId && a.type === 'lesson').map(a => a.contentId);
+  const assignedSongIds = assignments.filter(a => a.studentId === studentId && a.type === 'song').map(a => a.contentId);
+
+  // Lessons list
+  const lessonsHtml = lessons.length === 0
+    ? '<p class="text-muted text-sm" style="padding:10px">Нет уроков</p>'
+    : lessons.map(l => {
+        const assigned = assignedLessonIds.includes(l.id);
+        return `<div class="assign-item">
+          <div class="assign-item-info">
+            <div class="assign-item-title">${esc(l.title)}</div>
+          </div>
+          ${assigned ? '<span class="assigned-tag">✓ Назначен</span>' : ''}
+          <button class="btn ${assigned ? 'btn-danger' : 'btn-primary'} btn-xs"
+            onclick="toggleAssignment('${studentId}','lesson','${l.id}',${assigned})">
+            ${assigned ? '− Убрать' : '+ Добавить'}
+          </button>
+        </div>`;
+      }).join('');
+
+  // Songs list
+  const songsHtml = songs.length === 0
+    ? '<p class="text-muted text-sm" style="padding:10px">Нет песен</p>'
+    : songs.map(s => {
+        const assigned = assignedSongIds.includes(s.id);
+        return `<div class="assign-item">
+          <div class="assign-item-info">
+            <div class="assign-item-title">${esc(s.title)}</div>
+            <div class="assign-item-sub">${esc(s.artist)} · <span class="badge ${DIFFICULTY_BADGE[s.difficulty]}" style="font-size:0.68rem;padding:1px 6px">${DIFFICULTY_LABELS[s.difficulty]}</span></div>
+          </div>
+          ${assigned ? '<span class="assigned-tag">✓ Назначена</span>' : ''}
+          <button class="btn ${assigned ? 'btn-danger' : 'btn-primary'} btn-xs"
+            onclick="toggleAssignment('${studentId}','song','${s.id}',${assigned})">
+            ${assigned ? '− Убрать' : '+ Добавить'}
+          </button>
+        </div>`;
+      }).join('');
+
+  document.getElementById('assign-lessons-list').innerHTML = lessonsHtml;
+  document.getElementById('assign-songs-list').innerHTML = songsHtml;
+}
+
+function toggleAssignment(studentId, type, contentId, isAssigned) {
+  let assignments = db.getAssignments();
+  if (isAssigned) {
+    assignments = assignments.filter(a => !(a.studentId === studentId && a.type === type && a.contentId === contentId));
+    showToast('Назначение удалено', 'info');
+  } else {
+    assignments.push({ id: uuid(), studentId, type, contentId, assignedAt: new Date().toISOString() });
+    showToast('Назначение добавлено', 'success');
+  }
+  db.set(STORAGE_KEYS.assignments, assignments);
+  loadAssignments();
+  renderStudentsTable();
+}
+
+// ============================================================
+// ADMIN – DELETE
+// ============================================================
+let _confirmCallback = null;
+
+function confirmDelete(type, id, name) {
+  const typeLabels = { student: 'ученика', lesson: 'урок', song: 'песню' };
+  document.getElementById('confirm-message').textContent =
+    `Вы уверены, что хотите удалить ${typeLabels[type] || 'элемент'} "${name}"? Это действие нельзя отменить.`;
+  _confirmCallback = () => {
+    if (type === 'student') deleteStudent(id);
+    else if (type === 'lesson') deleteLesson(id);
+    else if (type === 'song') deleteSong(id);
+    closeConfirm();
+  };
+  document.getElementById('confirm-ok-btn').onclick = _confirmCallback;
+  document.getElementById('confirm-modal').classList.add('open');
+}
+
+function closeConfirm() {
+  document.getElementById('confirm-modal').classList.remove('open');
+  _confirmCallback = null;
+}
+
+function deleteStudent(id) {
+  db.set(STORAGE_KEYS.users, db.getUsers().filter(u => u.id !== id));
+  db.set(STORAGE_KEYS.assignments, db.getAssignments().filter(a => a.studentId !== id));
+  db.set(STORAGE_KEYS.progress, db.getProgress().filter(p => p.studentId !== id));
+  showToast('Ученик удалён', 'info');
+  renderStudentsTable();
+  populateAssignStudentSelect();
+  loadAssignments();
+}
+
+function deleteLesson(id) {
+  db.set(STORAGE_KEYS.lessons, db.getLessons().filter(l => l.id !== id));
+  db.set(STORAGE_KEYS.assignments, db.getAssignments().filter(a => !(a.type === 'lesson' && a.contentId === id)));
+  showToast('Урок удалён', 'info');
+  renderLessonsTable();
+  loadAssignments();
+}
+
+function deleteSong(id) {
+  db.set(STORAGE_KEYS.songs, db.getSongs().filter(s => s.id !== id));
+  db.set(STORAGE_KEYS.assignments, db.getAssignments().filter(a => !(a.type === 'song' && a.contentId === id)));
+  showToast('Песня удалена', 'info');
+  renderSongsTable();
+  loadAssignments();
+}
+
+// ============================================================
+// STUDENT DASHBOARD
+// ============================================================
+function loadStudentDashboard(user) {
+  // Set welcome info
+  const initials = user.name.split(' ').map(w => w[0]).join('').slice(0,2).toUpperCase();
+  document.getElementById('dash-avatar').textContent = initials;
+  document.getElementById('dash-name').textContent = `Привет, ${user.name.split(' ')[0]}! 👋`;
+
+  const assignments = db.getAssignments().filter(a => a.studentId === user.id);
+  const progress = db.getProgress().filter(p => p.studentId === user.id);
+
+  const lessonAssignments = assignments.filter(a => a.type === 'lesson');
+  const songAssignments = assignments.filter(a => a.type === 'song');
+  const total = assignments.length;
+  const completed = progress.filter(p => p.completed).length;
+  const pct = total > 0 ? Math.round((completed / total) * 100) : 0;
+
+  document.getElementById('prog-completed').textContent = completed;
+  document.getElementById('prog-total').textContent = total;
+  document.getElementById('prog-pct').textContent = pct + '%';
+  document.getElementById('prog-bar').style.width = pct + '%';
+
+  // Subtitle
+  const subs = [
+    'Продолжай учиться — ты молодец! 🎸',
+    'Практика делает мастера! 🎵',
+    'Каждый день — новый прогресс! 🌟',
+    'Музыка — это язык души! 🎶'
+  ];
+  document.getElementById('dash-subtitle').textContent = subs[Math.floor(Math.random() * subs.length)];
+
+  // Render lessons
+  renderStudentLessons(user.id, lessonAssignments, progress);
+  renderStudentSongs(user.id, songAssignments, progress);
+}
+
+function renderStudentLessons(userId, lessonAssignments, progress) {
+  const container = document.getElementById('student-lessons-list');
+  const lessons = db.getLessons();
+
+  if (lessonAssignments.length === 0) {
+    container.innerHTML = `
+      <div class="empty-state">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+        </svg>
+        <h3>Уроков пока нет</h3>
+        <p>Преподаватель ещё не назначил вам уроки.</p>
+      </div>`;
+    return;
+  }
+
+  container.innerHTML = lessonAssignments.map(a => {
+    const lesson = lessons.find(l => l.id === a.contentId);
+    if (!lesson) return '';
+    const prog = progress.find(p => p.contentId === a.contentId && p.type === 'lesson');
+    const isCompleted = prog && prog.completed;
+    const videoId = extractYouTubeId(lesson.videoUrl);
+
+    return `<div class="content-card ${isCompleted ? 'completed' : ''}" id="lesson-card-${lesson.id}">
+      <div class="card-header-row">
+        <div>
+          <div class="card-title">📖 ${esc(lesson.title)}</div>
+          ${lesson.description ? `<div class="card-desc">${esc(lesson.description)}</div>` : ''}
+        </div>
+        <div class="card-actions">
+          <label class="complete-checkbox" onclick="event.stopPropagation()">
+            <input type="checkbox" ${isCompleted ? 'checked' : ''}
+              onchange="toggleProgress('${userId}','lesson','${lesson.id}',this.checked)">
+            <span>${isCompleted ? '✅ Выполнено' : 'Отметить'}</span>
+          </label>
+        </div>
+      </div>
+      <div class="card-meta">
+        ${lesson.videoUrl ? `<span class="badge badge-red" style="cursor:pointer" onclick="toggleCardExpand('${lesson.id}')">▶ Видеоурок</span>` : ''}
+        ${lesson.pdfUrl ? `<a href="${esc(lesson.pdfUrl)}" target="_blank" class="badge badge-blue" onclick="event.stopPropagation()">📄 Материалы</a>` : ''}
+        ${isCompleted ? '<span class="badge badge-green">✓ Пройден</span>' : ''}
+      </div>
+      <div class="card-expanded" id="expand-${lesson.id}">
+        ${videoId ? `
+          <div class="video-embed">
+            <iframe src="https://www.youtube.com/embed/${videoId}" allowfullscreen loading="lazy"></iframe>
+          </div>` : ''}
+        ${lesson.pdfUrl ? `<a href="${esc(lesson.pdfUrl)}" target="_blank" class="btn btn-ghost btn-sm" style="margin-top:8px">📄 Открыть PDF материалы</a>` : ''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderStudentSongs(userId, songAssignments, progress) {
+  const container = document.getElementById('student-songs-list');
+  const songs = db.getSongs();
+
+  if (songAssignments.length === 0) {
+    container.innerHTML = `
+      <div class="empty-state">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/>
+        </svg>
+        <h3>Песен пока нет</h3>
+        <p>Преподаватель ещё не назначил вам песни.</p>
+      </div>`;
+    return;
+  }
+
+  container.innerHTML = songAssignments.map(a => {
+    const song = songs.find(s => s.id === a.contentId);
+    if (!song) return '';
+    const prog = progress.find(p => p.contentId === a.contentId && p.type === 'song');
+    const isCompleted = prog && prog.completed;
+    const videoId = extractYouTubeId(song.youtubeUrl);
+
+    return `<div class="content-card ${isCompleted ? 'completed' : ''}" id="song-card-${song.id}">
+      <div class="card-header-row">
+        <div>
+          <div class="card-title">🎵 ${esc(song.title)}</div>
+          <div class="card-subtitle">${esc(song.artist)}</div>
+        </div>
+        <div class="card-actions">
+          <label class="complete-checkbox" onclick="event.stopPropagation()">
+            <input type="checkbox" ${isCompleted ? 'checked' : ''}
+              onchange="toggleProgress('${userId}','song','${song.id}',this.checked)">
+            <span>${isCompleted ? '✅ Выучена' : 'Отметить'}</span>
+          </label>
+        </div>
+      </div>
+      <div class="card-meta">
+        <span class="badge ${DIFFICULTY_BADGE[song.difficulty]}">${DIFFICULTY_LABELS[song.difficulty]}</span>
+        ${song.youtubeUrl ? `<span class="badge badge-red" style="cursor:pointer" onclick="toggleCardExpand('${song.id}')">▶ YouTube</span>` : ''}
+        ${song.tabsChords ? `<span class="badge badge-purple" style="cursor:pointer" onclick="toggleCardExpand('${song.id}')">🎸 Аккорды</span>` : ''}
+        ${isCompleted ? '<span class="badge badge-green">✓ Выучена</span>' : ''}
+      </div>
+      <div class="card-expanded" id="expand-${song.id}">
+        ${videoId ? `
+          <div class="video-embed">
+            <iframe src="https://www.youtube.com/embed/${videoId}" allowfullscreen loading="lazy"></iframe>
+          </div>` : ''}
+        ${song.tabsChords ? `
+          <div style="margin-top:12px">
+            <div style="font-size:0.82rem;font-weight:700;color:var(--text2);margin-bottom:6px">🎸 Аккорды и табулатуры:</div>
+            <div class="chord-display">${esc(song.tabsChords)}</div>
+          </div>` : ''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function toggleCardExpand(id) {
+  const el = document.getElementById('expand-' + id);
+  if (el) el.classList.toggle('open');
+}
+
+function toggleProgress(userId, type, contentId, completed) {
+  let progress = db.getProgress();
+  const existing = progress.find(p => p.studentId === userId && p.type === type && p.contentId === contentId);
+  if (existing) {
+    existing.completed = completed;
+    existing.updatedAt = new Date().toISOString();
+  } else {
+    progress.push({ id: uuid(), studentId: userId, type, contentId, completed, updatedAt: new Date().toISOString() });
+  }
+  db.set(STORAGE_KEYS.progress, progress);
+
+  // Update card class
+  const cardId = (type === 'lesson' ? 'lesson-card-' : 'song-card-') + contentId;
+  const card = document.getElementById(cardId);
+  if (card) card.classList.toggle('completed', completed);
+
+  // Update progress bar
+  const session = db.getSession();
+  if (session) {
+    const user = db.getUsers().find(u => u.id === session.userId);
+    if (user) {
+      const assignments = db.getAssignments().filter(a => a.studentId === userId);
+      const allProgress = db.getProgress().filter(p => p.studentId === userId);
+      const total = assignments.length;
+      const done = allProgress.filter(p => p.completed).length;
+      const pct = total > 0 ? Math.round((done / total) * 100) : 0;
+      document.getElementById('prog-completed').textContent = done;
+      document.getElementById('prog-total').textContent = total;
+      document.getElementById('prog-pct').textContent = pct + '%';
+      document.getElementById('prog-bar').style.width = pct + '%';
+    }
+  }
+
+  showToast(completed ? '✅ Отмечено как выполненное!' : 'Отметка снята', completed ? 'success' : 'info');
+}
+
+// ============================================================
+// STUDENT DASHBOARD – TAB SWITCHING
+// ============================================================
+function switchDashTab(tab) {
+  document.querySelectorAll('.dash-tab').forEach((t, i) => {
+    const tabs = ['lessons','songs'];
+    t.classList.toggle('active', tabs[i] === tab);
+  });
+  document.querySelectorAll('.dash-tab-content').forEach(c => c.classList.remove('active'));
+  document.getElementById('dash-tab-' + tab).classList.add('active');
+}
+
+// ============================================================
+// UTILITIES
+// ============================================================
+function extractYouTubeId(url) {
+  if (!url) return null;
+  const patterns = [
+    /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/,
+    /youtube\.com\/v\/([^&\n?#]+)/
+  ];
+  for (const p of patterns) {
+    const m = url.match(p);
+    if (m) return m[1];
+  }
+  return null;
+}
+
+function esc(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+// ============================================================
+// TOAST NOTIFICATIONS
+// ============================================================
+function showToast(message, type = 'info') {
+  const icons = { success: '✅', error: '❌', info: 'ℹ️' };
+  const container = document.getElementById('toast-container');
+  const toast = document.createElement('div');
+  toast.className = `toast toast-${type}`;
+  toast.innerHTML = `<span class="toast-icon">${icons[type]}</span><span>${message}</span>`;
+  container.appendChild(toast);
+  setTimeout(() => {
+    toast.style.opacity = '0';
+    toast.style.transform = 'translateX(20px)';
+    toast.style.transition = 'all 0.3s ease';
+    setTimeout(() => toast.remove(), 300);
+  }, 3200);
+}
+
+// ============================================================
+// CLOSE MODALS ON OVERLAY CLICK
+// ============================================================
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) {
+      overlay.classList.remove('open');
+    }
+  });
+});
+
+// ============================================================
+// APP INITIALIZATION
+// ============================================================
+function init() {
+  initSampleData();
+  initTheme();
+  restoreSession();
+}
+
+init();
+</script>
+</body>
+</html>
