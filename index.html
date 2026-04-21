@@ -1,0 +1,2297 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>music4all.ru – Уроки гитары (Firebase)</title>
+  <script type="text/javascript" nonce="5d24f7d7179940c3be86e322584" src="//local.adguard.org?ts=1776752847386&amp;type=content-script&amp;dmn=private-us-east-1.manuscdn.com&amp;url=https%3A%2F%2Fprivate-us-east-1.manuscdn.com%2FsessionFile%2FMxqZaAjGXYMY8LRz3nyrpo%2Fsandbox%2Fruk2NBzK8ndKaHRuz3x1hQ_1776757334778_na1fn_L2hvbWUvdWJ1bnR1L211c2ljNGFsbC9pbmRleF9maXJlYmFzZQ.html%3FPolicy%3DeyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvTXhxWmFBakdYWU1ZOExSejNueXJwby9zYW5kYm94L3J1azJOQnpLOG5kS2FIUnV6M3gxaFFfMTc3Njc1NzMzNDc3OF9uYTFmbl9MMmh2YldVdmRXSjFiblIxTDIxMWMybGpOR0ZzYkM5cGJtUmxlRjltYVhKbFltRnpaUS5odG1sIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_%26Key-Pair-Id%3DK2HSFNDJXOU9YS%26Signature%3DBMdc8yzX9VuYDW3NF9wPgs2IXn5~Y0G8MkQflK3az0TW7WROYiXisvbMCCTy1iTl8DDflEZqhn~CPElEOEm46RH~JcC9FjMHJYXrcTYaiwpnREszl9hRX7k2SPy~3r5tF4vKWrdpIRKyuTcGEZGbSSRneShQbfcmQDsvW3HvWy0A~4Pe5vGYl2jaIOksZ3zgahZlPBxIAHHt-e1Z7YEObW6sMKjT5OH59WcSRVTut1crmy-nTph~~GWu8Y8EbRryjW1wtIfyumIXbqA3pbnSjU8rHTyQINNgXAW5pGkkTzVgdKuENpDB8VBa~vH9GeEo5WYwdJpQcQGCmFc3h33xgw__&amp;app=chrome.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="5d24f7d7179940c3be86e322584" src="//local.adguard.org?ts=1776752847386&amp;name=AdGuard%20Extra&amp;name=AdGuard%20Popup%20Blocker&amp;type=user-script"></script><link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- AlphaTab for GTP Playback -->
+  <script src="https://cdn.jsdelivr.net/npm/@coderline/alphatab@1.3.0/dist/alphaTab.min.js"></script>
+  
+  <!-- PWA Meta Tags -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#8b5cf6">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="music4all">
+  <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3844/3844724.png">
+<style>
+/* ============================================================
+   CSS VARIABLES & THEMES
+   ============================================================ */
+:root {
+  --purple: #8b5cf6;
+  --purple-light: #a78bfa;
+  --purple-dark: #6d28d9;
+  --orange: #f97316;
+  --orange-light: #fb923c;
+  --orange-dark: #ea580c;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-lg: 16px;
+  --transition: 0.25s ease;
+  --shadow: 0 4px 24px rgba(0,0,0,0.18);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.28);
+}
+
+[data-theme="dark"] {
+  --bg: #0f0f14;
+  --bg2: #16161e;
+  --bg3: #1e1e2a;
+  --bg4: #252535;
+  --surface: #1a1a26;
+  --surface2: #22223a;
+  --border: #2e2e45;
+  --text: #e8e8f0;
+  --text2: #a0a0c0;
+  --text3: #6060a0;
+  --card-bg: #1a1a28;
+  --input-bg: #12121c;
+  --header-bg: rgba(15,15,20,0.95);
+  --modal-overlay: rgba(0,0,0,0.75);
+}
+
+[data-theme="light"] {
+  --bg: #f5f3ff;
+  --bg2: #ede9fe;
+  --bg3: #ffffff;
+  --bg4: #f0f0f8;
+  --surface: #ffffff;
+  --surface2: #f5f3ff;
+  --border: #ddd6fe;
+  --text: #1a1a2e;
+  --text2: #4a4a6a;
+  --text3: #8080a0;
+  --card-bg: #ffffff;
+  --input-bg: #f8f7ff;
+  --header-bg: rgba(245,243,255,0.95);
+  --modal-overlay: rgba(0,0,0,0.45);
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.6;
+  transition: background var(--transition), color var(--transition);
+}
+
+a { color: var(--purple-light); text-decoration: none; }
+a:hover { color: var(--orange-light); }
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: 0.95rem;
+  background: var(--input-bg);
+  border: 1.5px solid var(--border);
+  color: var(--text);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  width: 100%;
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--purple);
+  box-shadow: 0 0 0 3px rgba(139,92,246,0.18);
+}
+select option { background: var(--bg2); }
+textarea { resize: vertical; min-height: 90px; }
+label { font-size: 0.85rem; font-weight: 600; color: var(--text2); display: block; margin-bottom: 5px; }
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 10px 20px; border-radius: 50px; border: none;
+  font-family: inherit; font-size: 0.9rem; font-weight: 600;
+  cursor: pointer; transition: all var(--transition);
+  white-space: nowrap;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(139,92,246,0.35);
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--purple-light), var(--purple));
+  box-shadow: 0 6px 20px rgba(139,92,246,0.5);
+  transform: translateY(-1px);
+}
+.btn-orange {
+  background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(249,115,22,0.35);
+}
+.btn-orange:hover {
+  background: linear-gradient(135deg, var(--orange-light), var(--orange));
+  box-shadow: 0 6px 20px rgba(249,115,22,0.5);
+  transform: translateY(-1px);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--text2);
+  border: 1.5px solid var(--border);
+}
+.btn-ghost:hover {
+  background: var(--bg3);
+  color: var(--text);
+  border-color: var(--purple);
+}
+.btn-danger {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(239,68,68,0.3);
+}
+.btn-danger:hover {
+  background: linear-gradient(135deg, #f87171, #ef4444);
+  transform: translateY(-1px);
+}
+.btn-sm { padding: 6px 14px; font-size: 0.8rem; }
+.btn-xs { padding: 4px 10px; font-size: 0.75rem; }
+.btn-icon { padding: 8px; border-radius: 50%; width: 36px; height: 36px; justify-content: center; }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none !important; }
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+#app-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: var(--header-bg);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 20px;
+  height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: background var(--transition);
+}
+.header-logo {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 1.1rem; font-weight: 800;
+  background: linear-gradient(135deg, var(--purple-light), var(--orange));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.header-logo svg { flex-shrink: 0; }
+.header-actions { display: flex; align-items: center; gap: 10px; }
+.theme-toggle {
+  background: var(--bg3); border: 1.5px solid var(--border);
+  border-radius: 50px; padding: 6px 12px;
+  cursor: pointer; display: flex; align-items: center; gap: 6px;
+  font-size: 0.8rem; font-weight: 600; color: var(--text2);
+  transition: all var(--transition);
+}
+.theme-toggle:hover { border-color: var(--purple); color: var(--text); }
+.user-badge {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: 50px; padding: 5px 14px 5px 5px;
+  font-size: 0.85rem; font-weight: 500;
+}
+.user-avatar {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--purple), var(--orange));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.75rem; font-weight: 700; color: #fff;
+}
+
+/* ============================================================
+   MAIN LAYOUT
+   ============================================================ */
+#app-main {
+  padding-top: 64px;
+  min-height: 100vh;
+}
+
+/* ============================================================
+   VIEWS (PAGES)
+   ============================================================ */
+.view { display: none; }
+.view.active { display: block; }
+
+/* ============================================================
+   HERO / LOGIN PAGE
+   ============================================================ */
+#view-login {
+  min-height: calc(100vh - 64px);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+}
+#view-login.active { display: flex; }
+
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+  overflow: hidden;
+}
+.hero-bg::before {
+  content: '';
+  position: absolute; top: -40%; left: -20%;
+  width: 80%; height: 80%;
+  background: radial-gradient(ellipse, rgba(139,92,246,0.12) 0%, transparent 70%);
+  animation: float1 8s ease-in-out infinite;
+}
+.hero-bg::after {
+  content: '';
+  position: absolute; bottom: -30%; right: -10%;
+  width: 60%; height: 60%;
+  background: radial-gradient(ellipse, rgba(249,115,22,0.1) 0%, transparent 70%);
+  animation: float2 10s ease-in-out infinite;
+}
+@keyframes float1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(30px,-20px)} }
+@keyframes float2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-20px,30px)} }
+
+.guitar-silhouette {
+  position: absolute; right: 5%; top: 50%; transform: translateY(-50%);
+  opacity: 0.04; z-index: 0;
+}
+
+.login-container {
+  position: relative; z-index: 1;
+  width: 100%; max-width: 420px;
+}
+.login-hero-text {
+  text-align: center; margin-bottom: 32px;
+}
+.login-hero-text h1 {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-weight: 800; line-height: 1.2;
+  background: linear-gradient(135deg, var(--purple-light), var(--orange));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+.login-hero-text p { color: var(--text2); font-size: 1rem; }
+
+.login-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-lg);
+}
+.login-card h2 {
+  font-size: 1.25rem; font-weight: 700; margin-bottom: 24px;
+  text-align: center;
+}
+.form-group { margin-bottom: 16px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.login-footer {
+  margin-top: 20px; text-align: center;
+  font-size: 0.82rem; color: var(--text3);
+}
+.login-footer a { color: var(--purple-light); }
+.login-footer a:hover { color: var(--orange-light); }
+
+/* ============================================================
+   FRETBOARD DECORATION
+   ============================================================ */
+.fretboard-deco {
+  display: flex; gap: 0; margin: 24px 0;
+  overflow: hidden; border-radius: 4px;
+  height: 6px;
+}
+.fret {
+  flex: 1; height: 100%;
+  background: linear-gradient(90deg, var(--purple-dark), var(--purple), var(--orange), var(--orange-dark));
+  opacity: 0.6;
+}
+
+/* ============================================================
+   ADMIN PANEL
+   ============================================================ */
+#view-admin {
+  min-height: calc(100vh - 64px);
+  padding: 30px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.admin-welcome {
+  margin-bottom: 28px;
+}
+.admin-welcome h2 {
+  font-size: 1.6rem; font-weight: 800;
+  background: linear-gradient(135deg, var(--purple-light), var(--orange));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.admin-welcome p { color: var(--text2); margin-top: 4px; }
+
+/* Admin Tabs */
+.admin-tabs {
+  display: flex; gap: 4px; flex-wrap: wrap;
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 5px;
+  margin-bottom: 24px;
+}
+.admin-tab {
+  flex: 1; min-width: 100px;
+  padding: 10px 16px; border-radius: var(--radius-sm);
+  border: none; background: transparent;
+  color: var(--text2); font-family: inherit;
+  font-size: 0.88rem; font-weight: 600;
+  cursor: pointer; transition: all var(--transition);
+  text-align: center;
+}
+.admin-tab:hover { background: var(--bg4); color: var(--text); }
+.admin-tab.active {
+  background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+  color: #fff;
+  box-shadow: 0 3px 12px rgba(139,92,246,0.35);
+}
+
+.admin-tab-content { display: none; }
+.admin-tab-content.active { display: block; }
+
+/* Section Cards */
+.section-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 20px;
+}
+.section-card-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 20px; flex-wrap: wrap; gap: 10px;
+}
+.section-card-header h3 {
+  font-size: 1.1rem; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.section-icon {
+  width: 32px; height: 32px; border-radius: 8px;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+}
+.icon-purple { background: rgba(139,92,246,0.15); }
+.icon-orange { background: rgba(249,115,22,0.15); }
+.icon-green { background: rgba(34,197,94,0.15); }
+.icon-blue { background: rgba(59,130,246,0.15); }
+
+/* Tables */
+.data-table {
+  width: 100%; border-collapse: collapse;
+  font-size: 0.88rem;
+}
+.data-table th {
+  text-align: left; padding: 10px 14px;
+  background: var(--bg3); color: var(--text2);
+  font-weight: 600; font-size: 0.8rem; text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border);
+}
+.data-table th:first-child { border-radius: var(--radius-sm) 0 0 0; }
+.data-table th:last-child { border-radius: 0 var(--radius-sm) 0 0; }
+.data-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:hover td { background: var(--bg3); }
+.table-wrap { overflow-x: auto; border-radius: var(--radius-sm); border: 1px solid var(--border); }
+
+/* Badges */
+.badge {
+  display: inline-flex; align-items: center;
+  padding: 3px 10px; border-radius: 50px;
+  font-size: 0.75rem; font-weight: 600;
+}
+.badge-purple { background: rgba(139,92,246,0.15); color: var(--purple-light); }
+.badge-orange { background: rgba(249,115,22,0.15); color: var(--orange-light); }
+.badge-green { background: rgba(34,197,94,0.15); color: #4ade80; }
+.badge-blue { background: rgba(59,130,246,0.15); color: #60a5fa; }
+.badge-red { background: rgba(239,68,68,0.15); color: #f87171; }
+
+/* Difficulty badges */
+.diff-beginner { background: rgba(34,197,94,0.15); color: #4ade80; }
+.diff-intermediate { background: rgba(249,115,22,0.15); color: var(--orange-light); }
+.diff-advanced { background: rgba(239,68,68,0.15); color: #f87171; }
+
+/* Inline form */
+.inline-form {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 20px;
+  margin-bottom: 16px;
+}
+.inline-form h4 {
+  font-size: 0.95rem; font-weight: 700;
+  margin-bottom: 16px; color: var(--text);
+  display: flex; align-items: center; gap: 6px;
+}
+.form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.form-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+@media (max-width: 600px) {
+  .form-grid-2, .form-grid-3 { grid-template-columns: 1fr; }
+}
+.form-actions { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+
+/* Assignment section */
+.assign-student-select {
+  display: flex; gap: 12px; align-items: flex-end;
+  flex-wrap: wrap; margin-bottom: 16px;
+}
+.assign-student-select > div { flex: 1; min-width: 200px; }
+.assign-lists {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+}
+@media (max-width: 700px) { .assign-lists { grid-template-columns: 1fr; } }
+.assign-list-box {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 16px;
+}
+.assign-list-box h4 {
+  font-size: 0.9rem; font-weight: 700; margin-bottom: 12px;
+  display: flex; align-items: center; gap: 6px;
+}
+.assign-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 10px; border-radius: var(--radius-sm);
+  border: 1px solid var(--border); margin-bottom: 6px;
+  background: var(--surface); font-size: 0.85rem;
+  transition: all var(--transition);
+}
+.assign-item:hover { border-color: var(--purple); }
+.assign-item-info { flex: 1; }
+.assign-item-title { font-weight: 600; }
+.assign-item-sub { font-size: 0.75rem; color: var(--text3); }
+.assigned-tag {
+  font-size: 0.7rem; padding: 2px 8px; border-radius: 50px;
+  background: rgba(139,92,246,0.15); color: var(--purple-light);
+  font-weight: 600; margin-right: 6px;
+}
+
+/* ============================================================
+   STUDENT DASHBOARD
+   ============================================================ */
+#view-dashboard {
+  min-height: calc(100vh - 64px);
+  padding: 30px 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.dash-welcome {
+  margin-bottom: 28px;
+  display: flex; align-items: center; gap: 16px;
+  flex-wrap: wrap;
+}
+.dash-avatar {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--purple), var(--orange));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; font-weight: 800; color: #fff;
+  flex-shrink: 0;
+}
+.dash-welcome-text h2 {
+  font-size: 1.4rem; font-weight: 800;
+}
+.dash-welcome-text p { color: var(--text2); font-size: 0.9rem; }
+
+/* Progress bar */
+.progress-bar-wrap {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 20px;
+  margin-bottom: 24px;
+}
+.progress-bar-wrap h3 {
+  font-size: 0.9rem; font-weight: 700; color: var(--text2);
+  text-transform: uppercase; letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+.progress-stats {
+  display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 12px;
+}
+.progress-stat {
+  display: flex; flex-direction: column;
+}
+.progress-stat-num {
+  font-size: 1.6rem; font-weight: 800;
+  background: linear-gradient(135deg, var(--purple-light), var(--orange));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.progress-stat-label { font-size: 0.78rem; color: var(--text3); }
+.progress-bar {
+  height: 8px; border-radius: 50px;
+  background: var(--bg4); overflow: hidden;
+}
+.progress-bar-fill {
+  height: 100%; border-radius: 50px;
+  background: linear-gradient(90deg, var(--purple), var(--orange));
+  transition: width 0.6s ease;
+}
+
+/* Student Tabs */
+.dash-tabs {
+  display: flex; gap: 4px;
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 5px;
+  margin-bottom: 24px;
+}
+.dash-tab {
+  flex: 1; padding: 10px 16px; border-radius: var(--radius-sm);
+  border: none; background: transparent;
+  color: var(--text2); font-family: inherit;
+  font-size: 0.9rem; font-weight: 600;
+  cursor: pointer; transition: all var(--transition);
+  text-align: center;
+}
+.dash-tab:hover { background: var(--bg4); color: var(--text); }
+.dash-tab.active {
+  background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+  color: #fff;
+  box-shadow: 0 3px 12px rgba(139,92,246,0.35);
+}
+
+.dash-tab-content { display: none; }
+.dash-tab-content.active { display: block; }
+
+/* Content Cards */
+.content-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  margin-bottom: 14px;
+  transition: all var(--transition);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.content-card::before {
+  content: '';
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--purple), var(--orange));
+  border-radius: 4px 0 0 4px;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.content-card:hover { border-color: var(--purple); box-shadow: var(--shadow); transform: translateY(-2px); }
+.content-card:hover::before { opacity: 1; }
+.content-card.completed { border-color: rgba(34,197,94,0.3); }
+.content-card.completed::before { opacity: 1; background: linear-gradient(180deg, #22c55e, #16a34a); }
+.card-header-row {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 12px; margin-bottom: 8px;
+}
+.card-title { font-size: 1rem; font-weight: 700; }
+.card-subtitle { font-size: 0.82rem; color: var(--text3); margin-top: 2px; }
+.card-meta {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  margin-top: 10px; align-items: center;
+}
+.card-actions {
+  display: flex; gap: 8px; align-items: center;
+  flex-shrink: 0;
+}
+.complete-checkbox {
+  display: flex; align-items: center; gap: 6px;
+  cursor: pointer; font-size: 0.82rem; color: var(--text2);
+  user-select: none;
+}
+.complete-checkbox input[type="checkbox"] {
+  width: 18px; height: 18px; cursor: pointer;
+  accent-color: var(--purple);
+}
+.card-desc { font-size: 0.85rem; color: var(--text2); margin-top: 6px; line-height: 1.5; }
+
+/* Expanded card content */
+.card-expanded {
+  display: none; margin-top: 16px;
+  padding-top: 16px; border-top: 1px solid var(--border);
+}
+.card-expanded.open { display: block; }
+.video-embed {
+  position: relative; padding-bottom: 56.25%;
+  height: 0; overflow: hidden; border-radius: var(--radius-sm);
+  background: #000; margin-bottom: 12px;
+}
+.video-embed iframe {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%; border: none;
+}
+.tabs-text {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 16px;
+  font-family: 'Courier New', monospace; font-size: 0.85rem;
+  white-space: pre-wrap; color: var(--text2);
+  max-height: 300px; overflow-y: auto;
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center; padding: 50px 20px;
+  color: var(--text3);
+}
+.empty-state svg { margin-bottom: 16px; opacity: 0.4; }
+.empty-state h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 6px; color: var(--text2); }
+.empty-state p { font-size: 0.88rem; }
+
+/* ============================================================
+   MODAL
+   ============================================================ */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 200;
+  background: var(--modal-overlay);
+  backdrop-filter: blur(4px);
+  display: none; align-items: center; justify-content: center;
+  padding: 20px;
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  width: 100%; max-width: 480px;
+  box-shadow: var(--shadow-lg);
+  animation: modalIn 0.25s ease;
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.95) translateY(-10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+.modal h3 {
+  font-size: 1.15rem; font-weight: 700; margin-bottom: 20px;
+  display: flex; align-items: center; gap: 8px;
+}
+.modal-actions {
+  display: flex; gap: 10px; margin-top: 20px;
+  justify-content: flex-end; flex-wrap: wrap;
+}
+
+/* ============================================================
+   TOAST NOTIFICATIONS
+   ============================================================ */
+#toast-container {
+  position: fixed; bottom: 24px; right: 24px; z-index: 300;
+  display: flex; flex-direction: column; gap: 8px;
+  max-width: 320px;
+}
+.toast {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 12px 16px;
+  box-shadow: var(--shadow);
+  display: flex; align-items: center; gap: 10px;
+  font-size: 0.88rem; font-weight: 500;
+  animation: toastIn 0.3s ease;
+}
+@keyframes toastIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.toast-success { border-left: 3px solid #22c55e; }
+.toast-error { border-left: 3px solid #ef4444; }
+.toast-info { border-left: 3px solid var(--purple); }
+.toast-icon { font-size: 1.1rem; }
+
+/* ============================================================
+   LOADING SPINNER
+   ============================================================ */
+.spinner {
+  width: 20px; height: 20px;
+  border: 2px solid var(--border);
+  border-top-color: var(--purple);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  #view-admin, #view-dashboard { padding: 20px 14px; }
+  .admin-tabs { flex-direction: column; }
+  .admin-tab { text-align: left; }
+  .section-card { padding: 16px; }
+  .login-card { padding: 24px 18px; }
+  .modal { padding: 20px 16px; }
+  .data-table { font-size: 0.8rem; }
+  .data-table th, .data-table td { padding: 8px 10px; }
+  .header-logo span { display: none; }
+}
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--purple-dark); }
+
+/* ============================================================
+   MISC
+   ============================================================ */
+.divider {
+  height: 1px; background: var(--border); margin: 20px 0;
+}
+.text-purple { color: var(--purple-light); }
+.text-orange { color: var(--orange-light); }
+.text-muted { color: var(--text3); }
+.text-sm { font-size: 0.85rem; }
+.fw-bold { font-weight: 700; }
+.mt-1 { margin-top: 8px; }
+.mt-2 { margin-top: 16px; }
+.flex { display: flex; }
+.items-center { align-items: center; }
+.gap-2 { gap: 8px; }
+.gap-3 { gap: 12px; }
+.w-full { width: 100%; }
+
+/* Admin login page */
+#view-admin-login {
+  min-height: calc(100vh - 64px);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+#view-admin-login.active { display: flex; }
+.admin-login-card {
+  background: var(--card-bg);
+  border: 2px solid var(--purple);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  width: 100%; max-width: 380px;
+  box-shadow: 0 0 40px rgba(139,92,246,0.2);
+}
+.admin-login-card h2 {
+  font-size: 1.3rem; font-weight: 800; text-align: center;
+  margin-bottom: 6px;
+}
+.admin-login-card p {
+  text-align: center; color: var(--text3); font-size: 0.85rem;
+  margin-bottom: 24px;
+}
+.admin-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: rgba(139,92,246,0.15); color: var(--purple-light);
+  border: 1px solid rgba(139,92,246,0.3);
+  border-radius: 50px; padding: 3px 12px;
+  font-size: 0.78rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+/* Chord/tabs display */
+.chord-display {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 14px;
+  font-family: 'Courier New', monospace; font-size: 0.82rem;
+  white-space: pre-wrap; color: var(--text2);
+  max-height: 200px; overflow-y: auto;
+  margin-top: 10px;
+}
+
+.song-controls {
+  display: flex; gap: 10px; margin-bottom: 12px; flex-wrap: wrap;
+  background: var(--bg2); padding: 10px; border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+.control-group { display: flex; align-items: center; gap: 8px; }
+.control-label { font-size: 0.75rem; font-weight: 700; color: var(--text3); text-transform: uppercase; }
+.btn-control {
+  width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;
+  background: var(--bg3); border: 1px solid var(--border); border-radius: 6px;
+  color: var(--text); cursor: pointer; font-weight: 700; font-size: 0.85rem;
+}
+.btn-control:hover { border-color: var(--purple); background: var(--bg4); }
+.transpose-val { min-width: 30px; text-align: center; font-weight: 700; color: var(--purple-light); font-size: 0.9rem; }
+
+/* Chord Highlighting */
+.chord-bold { font-weight: 800; color: var(--purple-light); }
+
+/* Auto-scroll */
+.scroll-controls {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--bg2); padding: 8px 12px; border-radius: var(--radius-sm);
+  border: 1px solid var(--border); margin-top: 10px;
+}
+.scroll-btn {
+  background: var(--purple); color: white; border: none; border-radius: 4px;
+  padding: 4px 12px; font-size: 0.8rem; font-weight: 600; cursor: pointer;
+}
+.scroll-btn.active { background: var(--orange); }
+.scroll-speed { font-size: 0.75rem; color: var(--text2); font-weight: 600; }
+
+/* Rhythmic Pattern (Strumming) */
+.rhythm-wrap {
+  margin-top: 12px; padding: 12px; background: var(--bg2);
+  border-radius: var(--radius-sm); border: 1px solid var(--border);
+}
+.rhythm-title { font-size: 0.75rem; font-weight: 700; color: var(--text3); text-transform: uppercase; margin-bottom: 8px; }
+.rhythm-arrows { display: flex; gap: 16px; flex-wrap: wrap; }
+.rhythm-item { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.rhythm-arrow { 
+  font-size: 1.4rem; color: var(--orange-light); font-weight: 800;
+  transition: transform 0.2s; cursor: default;
+}
+.rhythm-count { font-size: 0.75rem; font-weight: 700; color: var(--text3); }
+.rhythm-arrow:hover { transform: scale(1.2); color: var(--orange); }
+
+/* Chord Diagrams */
+.chord-diagrams-wrap {
+  margin-top: 16px; padding-top: 16px; border-top: 1px dashed var(--border);
+}
+.chord-diagrams-title { font-size: 0.8rem; font-weight: 700; color: var(--text3); text-transform: uppercase; margin-bottom: 10px; }
+.chord-diagrams-list { display: flex; gap: 12px; flex-wrap: wrap; }
+.chord-box {
+  background: #fff; border-radius: 6px; padding: 8px; width: 80px;
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.chord-name { font-size: 0.85rem; font-weight: 800; color: #1a1a2e; }
+.chord-svg { width: 60px; height: 70px; }
+
+/* AlphaTab Player */
+.alphatab-container {
+  margin-top: 24px; padding-top: 24px; border-top: 2px solid var(--border);
+  background: #fff; border-radius: var(--radius); overflow: hidden;
+  color: #000; /* AlphaTab needs light background usually */
+}
+.at-player-controls {
+  display: flex; align-items: center; gap: 15px; padding: 12px;
+  background: #f8f9fa; border-bottom: 1px solid #ddd; flex-wrap: wrap;
+}
+.at-btn {
+  background: #8b5cf6; color: white; border: none; border-radius: 4px;
+  padding: 6px 14px; font-size: 0.85rem; font-weight: 600; cursor: pointer;
+}
+.at-btn:hover { background: #7c3aed; }
+.at-tempo-wrap { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: #444; }
+.at-viewport { width: 100%; min-height: 400px; }
+
+/* Song card extra */
+.song-youtube-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 14px; border-radius: 50px;
+  background: rgba(239,68,68,0.12); color: #f87171;
+  border: 1px solid rgba(239,68,68,0.25);
+  font-size: 0.8rem; font-weight: 600;
+  cursor: pointer; transition: all var(--transition);
+  text-decoration: none;
+}
+.song-youtube-btn:hover {
+  background: rgba(239,68,68,0.22); color: #fca5a5;
+  transform: translateY(-1px);
+}
+
+/* Confirm dialog */
+.confirm-dialog {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 24px;
+  width: 100%; max-width: 360px;
+  box-shadow: var(--shadow-lg);
+  animation: modalIn 0.25s ease;
+  text-align: center;
+}
+.confirm-dialog h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
+.confirm-dialog p { color: var(--text2); font-size: 0.88rem; margin-bottom: 20px; }
+.confirm-dialog .modal-actions { justify-content: center; }
+
+/* Student name in table */
+.student-name-cell {
+  display: flex; align-items: center; gap: 8px;
+}
+.student-mini-avatar {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--purple), var(--orange));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.7rem; font-weight: 700; color: #fff;
+  flex-shrink: 0;
+}
+
+/* Tabs chords in admin */
+.tabs-preview {
+  font-family: 'Courier New', monospace; font-size: 0.78rem;
+  color: var(--text3); max-width: 200px;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header id="app-header">
+  <div class="header-logo">
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+      <path d="M18 4C18 4 20 6 20 10C20 14 17 16 17 16L12 21C11 22 9 22 8 21L7 20C6 19 6 17 7 16L12 11C12 11 14 8 14 4C14 2 16 2 18 4Z" fill="url(#g1)" opacity="0.9"/>
+      <circle cx="7.5" cy="20.5" r="2" fill="url(#g1)"/>
+      <rect x="16" y="2" width="2" height="8" rx="1" fill="url(#g2)" transform="rotate(15 16 2)"/>
+      <rect x="18" y="1" width="2" height="6" rx="1" fill="url(#g2)" transform="rotate(15 18 1)"/>
+      <defs>
+        <linearGradient id="g1" x1="0" y1="0" x2="20" y2="28" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#8b5cf6"/><stop offset="1" stop-color="#f97316"/>
+        </linearGradient>
+        <linearGradient id="g2" x1="0" y1="0" x2="20" y2="20" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#a78bfa"/><stop offset="1" stop-color="#fb923c"/>
+        </linearGradient>
+      </defs>
+    </svg>
+    <span>music4all.ru</span>
+  </div>
+  <div class="header-actions">
+    <div id="header-user-info" style="display:none"></div>
+    <button class="theme-toggle" onclick="toggleTheme()" title="Сменить тему">
+      <span id="theme-icon">🌙</span>
+      <span id="theme-label">Тёмная</span>
+    </button>
+    <button id="logout-btn" class="btn btn-ghost btn-sm" onclick="logout()" style="display:none">
+      Выйти
+    </button>
+  </div>
+</header>
+
+<!-- ============================================================
+     MAIN APP
+     ============================================================ -->
+<main id="app-main">
+
+  <!-- ==================== LOGIN VIEW ==================== -->
+  <div id="view-login" class="view active">
+    <div class="hero-bg"></div>
+    <svg class="guitar-silhouette" width="320" height="600" viewBox="0 0 320 600" fill="none">
+      <path d="M160 20C160 20 180 40 185 80C190 120 175 150 160 165C145 180 130 200 130 230C130 260 145 280 160 290C175 300 200 310 210 340C220 370 215 410 200 440C185 470 160 490 140 500C120 510 90 510 70 500C50 490 35 470 30 445C25 420 35 395 50 375C65 355 85 345 95 330C105 315 105 295 95 280C85 265 65 255 55 240C45 225 45 205 55 190C65 175 85 170 100 165C115 160 135 150 145 135C155 120 155 95 150 70C145 45 160 20 160 20Z" fill="currentColor" opacity="0.5"/>
+      <circle cx="80" cy="430" r="60" fill="currentColor" opacity="0.3"/>
+      <circle cx="80" cy="430" r="25" fill="currentColor" opacity="0.2"/>
+    </svg>
+
+    <div class="login-container">
+      <div class="login-hero-text">
+        <h1>🎸 music4all.ru</h1>
+        <p>Уроки гитары для всех уровней</p>
+      </div>
+
+      <div class="login-card">
+        <h2>Вход в личный кабинет</h2>
+        <div class="form-group">
+          <label for="login-phone">Номер телефона</label>
+          <input type="tel" id="login-phone" placeholder="+7 (999) 123-45-67" autocomplete="tel">
+        </div>
+        <div class="form-group">
+          <label for="login-password">Пароль</label>
+          <input type="password" id="login-password" placeholder="Введите пароль" autocomplete="current-password"
+                 onkeydown="if(event.key==='Enter') doLogin()">
+        </div>
+        <button class="btn btn-primary w-full" onclick="doLogin()" style="justify-content:center; margin-top:8px">
+          Войти
+        </button>
+        <div class="login-footer">
+          <a href="#" onclick="showView('admin-login'); return false;">Вход для администратора →</a>
+        </div>
+      </div>
+
+      <div class="fretboard-deco">
+        <div class="fret"></div><div class="fret"></div><div class="fret"></div>
+        <div class="fret"></div><div class="fret"></div><div class="fret"></div>
+      </div>
+      <p style="text-align:center; font-size:0.78rem; color:var(--text3)">
+        Нет аккаунта? Обратитесь к преподавателю.
+      </p>
+    </div>
+  </div>
+
+  <!-- ==================== ADMIN LOGIN VIEW ==================== -->
+  <div id="view-admin-login" class="view">
+    <div class="admin-login-card">
+      <div style="text-align:center; margin-bottom:16px">
+        <div class="admin-badge">🔐 Администратор</div>
+      </div>
+      <h2>Вход для администратора</h2>
+      <p>Панель управления music4all.ru</p>
+      <div class="form-group">
+        <label for="admin-phone">Телефон администратора</label>
+        <input type="tel" id="admin-phone" placeholder="+79991234567">
+      </div>
+      <div class="form-group">
+        <label for="admin-password">Пароль</label>
+        <input type="password" id="admin-password" placeholder="Пароль администратора"
+               onkeydown="if(event.key==='Enter') doAdminLogin()">
+      </div>
+      <button class="btn btn-primary w-full" onclick="doAdminLogin()" style="justify-content:center; margin-top:8px">
+        Войти как администратор
+      </button>
+      <div style="text-align:center; margin-top:16px">
+        <a href="#" onclick="showView('login'); return false;" style="font-size:0.82rem; color:var(--text3)">
+          ← Вернуться к входу для учеников
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== ADMIN PANEL VIEW ==================== -->
+  <div id="view-admin" class="view">
+    <div class="admin-welcome">
+      <h2>🎛️ Панель администратора</h2>
+      <p id="admin-welcome-sub">Управление учениками, уроками и песнями</p>
+    </div>
+
+    <div class="admin-tabs">
+      <button class="admin-tab active" onclick="switchAdminTab('students')">👥 Ученики</button>
+      <button class="admin-tab" onclick="switchAdminTab('lessons')">📚 Уроки</button>
+      <button class="admin-tab" onclick="switchAdminTab('songs')">🎵 Песни</button>
+      <button class="admin-tab" onclick="switchAdminTab('assignments')">📋 Назначения</button>
+    </div>
+
+    <!-- TAB: STUDENTS -->
+    <div id="admin-tab-students" class="admin-tab-content active">
+      <div class="section-card">
+        <div class="section-card-header">
+          <h3><span class="section-icon icon-purple">👤</span> Список учеников</h3>
+          <button class="btn btn-primary btn-sm" onclick="openStudentModal()">+ Добавить ученика</button>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table" id="students-table">
+            <thead>
+              <tr>
+                <th>Имя</th>
+                <th>Телефон</th>
+                <th>Уроков</th>
+                <th>Песен</th>
+                <th>Дата создания</th>
+                <th>Действия</th>
+              </tr>
+            </thead>
+            <tbody id="students-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: LESSONS -->
+    <div id="admin-tab-lessons" class="admin-tab-content">
+      <div class="section-card">
+        <div class="section-card-header">
+          <h3><span class="section-icon icon-orange">📖</span> Добавить урок</h3>
+        </div>
+        <div class="inline-form">
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label>Название урока *</label>
+              <input type="text" id="lesson-title" placeholder="Например: Основы игры на гитаре">
+            </div>
+            <div class="form-group">
+              <label>Ссылка на видео (YouTube)</label>
+              <input type="url" id="lesson-video" placeholder="https://youtube.com/watch?v=...">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Описание</label>
+            <textarea id="lesson-desc" placeholder="Краткое описание урока..."></textarea>
+          </div>
+          <div class="form-group">
+            <label>Ссылка на материалы (PDF)</label>
+            <input type="url" id="lesson-pdf" placeholder="https://...">
+          </div>
+          <div class="form-group">
+            <label>Ссылка на Guitar Pro (.gp)</label>
+            <input type="url" id="lesson-gtp" placeholder="https://.../file.gp5">
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-primary" onclick="saveLesson()">💾 Сохранить урок</button>
+            <button class="btn btn-ghost" onclick="clearLessonForm()">Очистить</button>
+          </div>
+          <input type="hidden" id="lesson-edit-id">
+        </div>
+      </div>
+      <div class="section-card">
+        <div class="section-card-header">
+          <h3><span class="section-icon icon-blue">📚</span> Все уроки</h3>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr><th>Название</th><th>Описание</th><th>Видео</th><th>PDF</th><th>Действия</th></tr>
+            </thead>
+            <tbody id="lessons-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: SONGS -->
+    <div id="admin-tab-songs" class="admin-tab-content">
+      <div class="section-card">
+        <div class="section-card-header">
+          <h3><span class="section-icon icon-orange">🎸</span> Добавить песню</h3>
+        </div>
+        <div class="inline-form">
+          <div class="form-grid-3">
+            <div class="form-group">
+              <label>Название песни *</label>
+              <input type="text" id="song-title" placeholder="Название">
+            </div>
+            <div class="form-group">
+              <label>Исполнитель *</label>
+              <input type="text" id="song-artist" placeholder="Исполнитель">
+            </div>
+            <div class="form-group">
+              <label>Уровень сложности</label>
+              <select id="song-difficulty">
+                <option value="beginner">Начинающий</option>
+                <option value="intermediate">Средний</option>
+                <option value="advanced">Продвинутый</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Ссылка на YouTube</label>
+            <input type="url" id="song-youtube" placeholder="https://youtube.com/watch?v=...">
+          </div>
+          <div class="form-group">
+            <label>Ссылка на Guitar Pro (.gp)</label>
+            <input type="url" id="song-gtp" placeholder="https://.../file.gp5">
+          </div>
+          <div class="form-group">
+            <label>Ритмический рисунок (бой)</label>
+            <input type="text" id="song-rhythm" placeholder="Напр: ↓(1) ↓(2) ↑(&) ↑(3) ↓(4)">
+            <small style="color:var(--text3); font-size:0.7rem">Формат: ↓(счет) ↑(счет). Пример: ↓(1) ↓(2) ↑(&) ↑(3) ↓(4)</small>
+          </div>
+          <div class="form-group">
+            <label>Аккорды / Табулатуры (текст)</label>
+            <textarea id="song-tabs" placeholder="Am  Dm  E  Am&#10;Текст куплета...&#10;&#10;Am  F  C  G&#10;Текст припева..." style="min-height:120px; font-family:monospace"></textarea>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-primary" onclick="saveSong()">💾 Сохранить песню</button>
+            <button class="btn btn-ghost" onclick="clearSongForm()">Очистить</button>
+          </div>
+          <input type="hidden" id="song-edit-id">
+        </div>
+      </div>
+      <div class="section-card">
+        <div class="section-card-header">
+          <h3><span class="section-icon icon-green">🎵</span> Все песни</h3>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr><th>Название</th><th>Исполнитель</th><th>Сложность</th><th>YouTube</th><th>Аккорды</th><th>Действия</th></tr>
+            </thead>
+            <tbody id="songs-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: ASSIGNMENTS -->
+    <div id="admin-tab-assignments" class="admin-tab-content">
+      <div class="section-card">
+        <div class="section-card-header">
+          <h3><span class="section-icon icon-purple">📋</span> Назначения для учеников</h3>
+        </div>
+        <div class="assign-student-select">
+          <div>
+            <label>Выберите ученика</label>
+            <select id="assign-student-select" onchange="loadAssignments()">
+              <option value="">— Выберите ученика —</option>
+            </select>
+          </div>
+        </div>
+        <div id="assign-content" style="display:none">
+          <div class="assign-lists">
+            <div class="assign-list-box">
+              <h4>📚 Уроки</h4>
+              <div id="assign-lessons-list"></div>
+            </div>
+            <div class="assign-list-box">
+              <h4>🎵 Песни</h4>
+              <div id="assign-songs-list"></div>
+            </div>
+          </div>
+        </div>
+        <div id="assign-placeholder" style="text-align:center; padding:30px; color:var(--text3)">
+          Выберите ученика для управления назначениями
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== STUDENT DASHBOARD VIEW ==================== -->
+  <div id="view-dashboard" class="view">
+    <div class="dash-welcome">
+      <div class="dash-avatar" id="dash-avatar">И</div>
+      <div class="dash-welcome-text">
+        <h2 id="dash-name">Привет, Ученик!</h2>
+        <p id="dash-subtitle">Продолжай учиться — ты молодец! 🎸</p>
+      </div>
+    </div>
+
+    <div class="progress-bar-wrap">
+      <h3>📊 Мой прогресс</h3>
+      <div class="progress-stats">
+        <div class="progress-stat">
+          <span class="progress-stat-num" id="prog-completed">0</span>
+          <span class="progress-stat-label">Выполнено</span>
+        </div>
+        <div class="progress-stat">
+          <span class="progress-stat-num" id="prog-total">0</span>
+          <span class="progress-stat-label">Всего заданий</span>
+        </div>
+        <div class="progress-stat">
+          <span class="progress-stat-num" id="prog-pct">0%</span>
+          <span class="progress-stat-label">Прогресс</span>
+        </div>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-bar-fill" id="prog-bar" style="width:0%"></div>
+      </div>
+    </div>
+
+    <div class="dash-tabs">
+      <button class="dash-tab active" onclick="switchDashTab('lessons')">📚 Мои уроки</button>
+      <button class="dash-tab" onclick="switchDashTab('songs')">🎵 Мои песни</button>
+    </div>
+
+    <div id="dash-tab-lessons" class="dash-tab-content active">
+      <div id="student-lessons-list"></div>
+    </div>
+    <div id="dash-tab-songs" class="dash-tab-content">
+      <div id="student-songs-list"></div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ============================================================
+     MODAL: ADD/EDIT STUDENT
+     ============================================================ -->
+<div class="modal-overlay" id="student-modal">
+  <div class="modal">
+    <h3 id="student-modal-title">👤 Добавить ученика</h3>
+    <div class="form-group">
+      <label>Имя ученика *</label>
+      <input type="text" id="modal-student-name" placeholder="Иван Петров">
+    </div>
+    <div class="form-group">
+      <label>Номер телефона *</label>
+      <input type="tel" id="modal-student-phone" placeholder="+79161234567">
+    </div>
+    <div class="form-group">
+      <label>Пароль *</label>
+      <input type="text" id="modal-student-password" placeholder="Придумайте пароль">
+    </div>
+    <input type="hidden" id="modal-student-id">
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeStudentModal()">Отмена</button>
+      <button class="btn btn-primary" onclick="saveStudent()">💾 Сохранить</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     MODAL: CONFIRM DELETE
+     ============================================================ -->
+<div class="modal-overlay" id="confirm-modal">
+  <div class="confirm-dialog">
+    <h3>⚠️ Подтверждение</h3>
+    <p id="confirm-message">Вы уверены, что хотите удалить этот элемент?</p>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeConfirm()">Отмена</button>
+      <button class="btn btn-danger" id="confirm-ok-btn">Удалить</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast-container"></div>
+
+<!-- ============================================================
+     FIREBASE SDK & LOGIC
+     ============================================================ -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
+  import { getFirestore, collection, getDocs, addDoc, updateDoc, deleteDoc, doc, query, where, setDoc, getDoc, onSnapshot } 
+    from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
+
+  // ============================================================
+  // !!! ВСТАВЬТЕ ВАШ КОНФИГ FIREBASE ЗДЕСЬ !!!
+  // ============================================================
+  const firebaseConfig = {
+    apiKey: "AIzaSyAPgwMLizH9QFJK04iTMRjBU5QxL-B1Se8",
+  authDomain: "musicall4all.firebaseapp.com",
+  projectId: "musicall4all",
+  storageBucket: "musicall4all.firebasestorage.app",
+  messagingSenderId: "995739899943",
+  appId: "1:995739899943:web:a2b341d7305de0796e5602",
+  measurementId: "G-Y6QLQ5BC23"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const fdb = getFirestore(app);
+
+  // ============================================================
+  // DATA LAYER (FIREBASE)
+  // ============================================================
+  window.db = {
+    getUsers: async () => {
+      const snap = await getDocs(collection(fdb, 'users'));
+      return snap.docs.map(d => ({ id: d.id, ...d.data() }));
+    },
+    getLessons: async () => {
+      const snap = await getDocs(collection(fdb, 'lessons'));
+      return snap.docs.map(d => ({ id: d.id, ...d.data() }));
+    },
+    getSongs: async () => {
+      const snap = await getDocs(collection(fdb, 'songs'));
+      return snap.docs.map(d => ({ id: d.id, ...d.data() }));
+    },
+    getAssignments: async () => {
+      const snap = await getDocs(collection(fdb, 'assignments'));
+      return snap.docs.map(d => ({ id: d.id, ...d.data() }));
+    },
+    getProgress: async () => {
+      const snap = await getDocs(collection(fdb, 'progress'));
+      return snap.docs.map(d => ({ id: d.id, ...d.data() }));
+    },
+    
+    // Setters
+    saveUser: async (id, data) => {
+      if (id) await updateDoc(doc(fdb, 'users', id), data);
+      else await addDoc(collection(fdb, 'users'), data);
+    },
+    deleteUser: async (id) => {
+      await deleteDoc(doc(fdb, 'users', id));
+      // Cleanup assignments
+      const q = query(collection(fdb, 'assignments'), where('studentId', '==', id));
+      const snap = await getDocs(q);
+      for (const d of snap.docs) await deleteDoc(doc(fdb, 'assignments', d.id));
+    },
+    
+    saveLesson: async (id, data) => {
+      if (id) await updateDoc(doc(fdb, 'lessons', id), data);
+      else await addDoc(collection(fdb, 'lessons'), data);
+    },
+    deleteLesson: async (id) => {
+      await deleteDoc(doc(fdb, 'lessons', id));
+      const q = query(collection(fdb, 'assignments'), where('contentId', '==', id), where('type', '==', 'lesson'));
+      const snap = await getDocs(q);
+      for (const d of snap.docs) await deleteDoc(doc(fdb, 'assignments', d.id));
+    },
+    
+    saveSong: async (id, data) => {
+      if (id) await updateDoc(doc(fdb, 'songs', id), data);
+      else await addDoc(collection(fdb, 'songs'), data);
+    },
+    deleteSong: async (id) => {
+      await deleteDoc(doc(fdb, 'songs', id));
+      const q = query(collection(fdb, 'assignments'), where('contentId', '==', id), where('type', '==', 'song'));
+      const snap = await getDocs(q);
+      for (const d of snap.docs) await deleteDoc(doc(fdb, 'assignments', d.id));
+    },
+    
+    toggleAssignment: async (studentId, type, contentId, isAssigned) => {
+      const assignments = await window.db.getAssignments();
+      if (isAssigned) {
+        const found = assignments.find(a => a.studentId === studentId && a.type === type && a.contentId === contentId);
+        if (found) await deleteDoc(doc(fdb, 'assignments', found.id));
+      } else {
+        await addDoc(collection(fdb, 'assignments'), { studentId, type, contentId, assignedAt: new Date().toISOString() });
+      }
+    },
+    
+    saveProgress: async (userId, type, contentId, completed) => {
+      const q = query(collection(fdb, 'progress'), 
+        where('studentId', '==', userId), 
+        where('type', '==', type), 
+        where('contentId', '==', contentId));
+      const snap = await getDocs(q);
+      if (!snap.empty) {
+        await updateDoc(doc(fdb, 'progress', snap.docs[0].id), { completed, updatedAt: new Date().toISOString() });
+      } else {
+        await addDoc(collection(fdb, 'progress'), { studentId: userId, type, contentId, completed, updatedAt: new Date().toISOString() });
+      }
+    },
+
+    // Session (still local)
+    getSession: () => JSON.parse(localStorage.getItem('m4a_session')),
+    setSession: (s) => localStorage.setItem('m4a_session', JSON.stringify(s)),
+    clearSession: () => localStorage.removeItem('m4a_session')
+  };
+
+  // Export to global scope for the rest of the app
+  window.initFirebaseApp = async () => {
+    const users = await window.db.getUsers();
+    const admin = users.find(u => u.role === 'admin');
+    
+    // Данные администратора (можете менять здесь)
+    const ADMIN_PHONE = '+79991234567';
+    const ADMIN_PASS = 'admin123';
+    const ADMIN_NAME = 'Администратор';
+
+    if (!admin) {
+      console.log("Initializing default admin...");
+      await addDoc(collection(fdb, 'users'), {
+        role: 'admin',
+        phone: ADMIN_PHONE,
+        passwordHash: btoa(unescape(encodeURIComponent(ADMIN_PHONE + ':' + ADMIN_PASS + ':m4a_salt_2024'))),
+        name: ADMIN_NAME,
+        createdAt: new Date().toISOString()
+      });
+    }
+  };
+</script>
+
+<script>
+'use strict';
+
+// ============================================================
+// CONFIG
+// ============================================================
+const DIFFICULTY_LABELS = { beginner: 'Начинающий', intermediate: 'Средний', advanced: 'Продвинутый' };
+const DIFFICULTY_BADGE = { beginner: 'diff-beginner', intermediate: 'diff-intermediate', advanced: 'diff-advanced' };
+
+// ============================================================
+// HELPERS
+// ============================================================
+function hashPassword(phone, password) {
+  const raw = phone + ':' + password + ':m4a_salt_2024';
+  return btoa(unescape(encodeURIComponent(raw)));
+}
+
+function checkPassword(phone, password, hash) {
+  return hashPassword(phone, password) === hash;
+}
+
+function esc(str) {
+  if (!str) return '';
+  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
+function showToast(message, type = 'info') {
+  const icons = { success: '✅', error: '❌', info: 'ℹ️' };
+  const container = document.getElementById('toast-container');
+  const toast = document.createElement('div');
+  toast.className = `toast toast-${type}`;
+  toast.innerHTML = `<span class="toast-icon">${icons[type]}</span><span>${message}</span>`;
+  container.appendChild(toast);
+  setTimeout(() => { toast.style.opacity = '0'; toast.style.transform = 'translateX(20px)'; toast.style.transition = 'all 0.3s ease'; setTimeout(() => toast.remove(), 300); }, 3200);
+}
+
+function showView(name) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  const el = document.getElementById('view-' + name);
+  if (el) el.classList.add('active');
+}
+
+function toggleTheme() {
+  const current = document.documentElement.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('m4a_theme', next);
+  document.getElementById('theme-icon').textContent = next === 'dark' ? '🌙' : '☀️';
+  document.getElementById('theme-label').textContent = next === 'dark' ? 'Тёмная' : 'Светлая';
+}
+
+// ============================================================
+// AUTH
+// ============================================================
+async function doLogin() {
+  const phone = document.getElementById('login-phone').value.trim();
+  const password = document.getElementById('login-password').value;
+  if (!phone || !password) { showToast('Заполните все поля', 'error'); return; }
+
+  const users = await window.db.getUsers();
+  const user = users.find(u => u.phone === phone && u.role === 'student');
+  if (!user) { showToast('Ученик не найден', 'error'); return; }
+  if (!checkPassword(phone, password, user.passwordHash)) { showToast('Неверный пароль', 'error'); return; }
+
+  const session = { userId: user.id, role: 'student', name: user.name };
+  window.db.setSession(session);
+  updateHeader(session);
+  loadStudentDashboard(user);
+  showView('dashboard');
+}
+
+async function doAdminLogin() {
+  const phone = document.getElementById('admin-phone').value.trim();
+  const password = document.getElementById('admin-password').value;
+  const users = await window.db.getUsers();
+  const user = users.find(u => u.phone === phone && u.role === 'admin');
+  if (!user || !checkPassword(phone, password, user.passwordHash)) { showToast('Ошибка входа', 'error'); return; }
+
+  const session = { userId: user.id, role: 'admin', name: user.name };
+  window.db.setSession(session);
+  updateHeader(session);
+  loadAdminPanel();
+  showView('admin');
+}
+
+function logout() {
+  window.db.clearSession();
+  updateHeader(null);
+  showView('login');
+}
+
+function updateHeader(session) {
+  const userInfo = document.getElementById('header-user-info');
+  const logoutBtn = document.getElementById('logout-btn');
+  if (session) {
+    const initials = session.name.split(' ').map(w => w[0]).join('').toUpperCase();
+    userInfo.innerHTML = `<div class="user-badge"><div class="user-avatar">${initials}</div><span>${session.name}</span></div>`;
+    userInfo.style.display = 'block'; logoutBtn.style.display = 'inline-flex';
+  } else {
+    userInfo.style.display = 'none'; logoutBtn.style.display = 'none';
+  }
+}
+
+// ============================================================
+// ADMIN LOGIC
+// ============================================================
+async function loadAdminPanel() {
+  renderStudentsTable();
+  renderLessonsTable();
+  renderSongsTable();
+  populateAssignStudentSelect();
+}
+
+async function renderStudentsTable() {
+  const users = (await window.db.getUsers()).filter(u => u.role === 'student');
+  const assignments = await window.db.getAssignments();
+  const tbody = document.getElementById('students-tbody');
+  tbody.innerHTML = users.map(u => {
+    const lCount = assignments.filter(a => a.studentId === u.id && a.type === 'lesson').length;
+    const sCount = assignments.filter(a => a.studentId === u.id && a.type === 'song').length;
+    return `<tr>
+      <td>${esc(u.name)}</td>
+      <td>${esc(u.phone)}</td>
+      <td>${lCount}</td>
+      <td>${sCount}</td>
+      <td>${new Date(u.createdAt).toLocaleDateString()}</td>
+      <td>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-xs" onclick="openStudentModal('${u.id}')">✏️</button>
+          <button class="btn btn-danger btn-xs" onclick="confirmDelete('student','${u.id}','${esc(u.name)}')">🗑️</button>
+        </div>
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+async function saveStudent() {
+  const id = document.getElementById('modal-student-id').value;
+  const name = document.getElementById('modal-student-name').value.trim();
+  const phone = document.getElementById('modal-student-phone').value.trim();
+  const password = document.getElementById('modal-student-password').value;
+  
+  if (!name || !phone) { showToast('Имя и телефон обязательны', 'error'); return; }
+
+  const data = { name, phone, role: 'student', updatedAt: new Date().toISOString() };
+  if (password) data.passwordHash = hashPassword(phone, password);
+  if (!id) data.createdAt = new Date().toISOString();
+
+  await window.db.saveUser(id, data);
+  closeStudentModal();
+  loadAdminPanel();
+  showToast('Сохранено', 'success');
+}
+
+function openStudentModal(id = null) {
+  document.getElementById('modal-student-id').value = id || '';
+  document.getElementById('student-modal').classList.add('open');
+}
+function closeStudentModal() { document.getElementById('student-modal').classList.remove('open'); }
+
+// Confirmation Logic
+let confirmCallback = null;
+function confirmDelete(type, id, name) {
+  const msg = `Вы уверены, что хотите удалить ${type === 'student' ? 'ученика' : 'элемент'} "${name}"?`;
+  document.getElementById('confirm-message').textContent = msg;
+  document.getElementById('confirm-modal').classList.add('open');
+  confirmCallback = async () => {
+    if (type === 'student') await window.db.deleteUser(id);
+    else if (type === 'lesson') await window.db.deleteLesson(id);
+    else if (type === 'song') await window.db.deleteSong(id);
+    closeConfirm();
+    loadAdminPanel();
+    showToast('Удалено', 'success');
+  };
+}
+function closeConfirm() { document.getElementById('confirm-modal').classList.remove('open'); confirmCallback = null; }
+document.getElementById('confirm-ok-btn').onclick = () => confirmCallback && confirmCallback();
+
+// Lessons & Songs
+async function renderLessonsTable() {
+  const lessons = await window.db.getLessons();
+  document.getElementById('lessons-tbody').innerHTML = lessons.map(l => `<tr>
+    <td>${esc(l.title)}</td>
+    <td>${esc(l.description || '')}</td>
+    <td>${l.videoUrl ? '✅' : ''}</td>
+    <td>${l.pdfUrl ? '✅' : ''}</td>
+    <td>
+      <div style="display:flex;gap:6px">
+        <button class="btn btn-ghost btn-xs" onclick="editLesson('${l.id}')">✏️</button>
+        <button class="btn btn-danger btn-xs" onclick="confirmDelete('lesson','${l.id}','${esc(l.title)}')">🗑️</button>
+      </div>
+    </td>
+  </tr>`).join('');
+}
+
+async function saveLesson() {
+  const id = document.getElementById('lesson-edit-id').value;
+  const title = document.getElementById('lesson-title').value;
+  const description = document.getElementById('lesson-desc').value;
+  const videoUrl = document.getElementById('lesson-video').value;
+  const pdfUrl = document.getElementById('lesson-pdf').value;
+  const gtpUrl = document.getElementById('lesson-gtp').value;
+  if (!title) { showToast('Название обязательно', 'error'); return; }
+  await window.db.saveLesson(id, { title, description, videoUrl, pdfUrl, gtpUrl, updatedAt: new Date().toISOString() });
+  clearLessonForm();
+  loadAdminPanel();
+  showToast('Урок сохранен', 'success');
+}
+
+function clearLessonForm() {
+  document.getElementById('lesson-edit-id').value = '';
+  document.getElementById('lesson-title').value = '';
+  document.getElementById('lesson-desc').value = '';
+  document.getElementById('lesson-video').value = '';
+  document.getElementById('lesson-pdf').value = '';
+  document.getElementById('lesson-gtp').value = '';
+}
+
+async function editLesson(id) {
+  const lessons = await window.db.getLessons();
+  const l = lessons.find(x => x.id === id);
+  if (!l) return;
+  document.getElementById('lesson-edit-id').value = l.id;
+  document.getElementById('lesson-title').value = l.title;
+  document.getElementById('lesson-desc').value = l.description || '';
+  document.getElementById('lesson-video').value = l.videoUrl || '';
+  document.getElementById('lesson-pdf').value = l.pdfUrl || '';
+  document.getElementById('lesson-gtp').value = l.gtpUrl || '';
+  switchAdminTab('lessons');
+}
+
+async function renderSongsTable() {
+  const songs = await window.db.getSongs();
+  document.getElementById('songs-tbody').innerHTML = songs.map(s => `<tr>
+    <td>${esc(s.title)}</td>
+    <td>${esc(s.artist)}</td>
+    <td><span class="badge ${DIFFICULTY_BADGE[s.difficulty]}">${DIFFICULTY_LABELS[s.difficulty]}</span></td>
+    <td>${s.youtubeUrl ? '✅' : ''}</td>
+    <td><div class="tabs-preview">${esc(s.tabsChords)}</div></td>
+    <td>
+      <div style="display:flex;gap:6px">
+        <button class="btn btn-ghost btn-xs" onclick="editSong('${s.id}')">✏️</button>
+        <button class="btn btn-danger btn-xs" onclick="confirmDelete('song','${s.id}','${esc(s.title)}')">🗑️</button>
+      </div>
+    </td>
+  </tr>`).join('');
+}
+
+async function saveSong() {
+  const id = document.getElementById('song-edit-id').value;
+  const title = document.getElementById('song-title').value;
+  const artist = document.getElementById('song-artist').value;
+  const difficulty = document.getElementById('song-difficulty').value;
+  const youtubeUrl = document.getElementById('song-youtube').value;
+  const gtpUrl = document.getElementById('song-gtp').value;
+  const rhythmPattern = document.getElementById('song-rhythm').value;
+  const tabsChords = document.getElementById('song-tabs').value;
+  if (!title || !artist) { showToast('Название и автор обязательны', 'error'); return; }
+  await window.db.saveSong(id, { title, artist, difficulty, youtubeUrl, gtpUrl, rhythmPattern, tabsChords, updatedAt: new Date().toISOString() });
+  clearSongForm();
+  loadAdminPanel();
+  showToast('Песня сохранена', 'success');
+}
+
+function clearSongForm() {
+  document.getElementById('song-edit-id').value = '';
+  document.getElementById('song-title').value = '';
+  document.getElementById('song-artist').value = '';
+  document.getElementById('song-difficulty').value = 'beginner';
+  document.getElementById('song-youtube').value = '';
+  document.getElementById('song-gtp').value = '';
+  document.getElementById('song-rhythm').value = '';
+  document.getElementById('song-tabs').value = '';
+}
+
+async function editSong(id) {
+  const songs = await window.db.getSongs();
+  const s = songs.find(x => x.id === id);
+  if (!s) return;
+  document.getElementById('song-edit-id').value = s.id;
+  document.getElementById('song-title').value = s.title;
+  document.getElementById('song-artist').value = s.artist;
+  document.getElementById('song-difficulty').value = s.difficulty;
+  document.getElementById('song-youtube').value = s.youtubeUrl || '';
+  document.getElementById('song-gtp').value = s.gtpUrl || '';
+  document.getElementById('song-rhythm').value = s.rhythmPattern || '';
+  document.getElementById('song-tabs').value = s.tabsChords || '';
+  switchAdminTab('songs');
+}
+
+// Assignments
+async function populateAssignStudentSelect() {
+  const sel = document.getElementById('assign-student-select');
+  const users = (await window.db.getUsers()).filter(u => u.role === 'student');
+  const current = sel.value;
+  sel.innerHTML = '<option value="">— Выберите ученика —</option>' +
+    users.map(s => `<option value="${s.id}" ${s.id === current ? 'selected' : ''}>${esc(s.name)}</option>`).join('');
+}
+
+async function loadAssignments() {
+  const studentId = document.getElementById('assign-student-select').value;
+  if (!studentId) {
+    document.getElementById('assign-content').style.display = 'none';
+    document.getElementById('assign-placeholder').style.display = 'block';
+    return;
+  }
+  document.getElementById('assign-content').style.display = 'block';
+  document.getElementById('assign-placeholder').style.display = 'none';
+
+  const lessons = await window.db.getLessons();
+  const songs = await window.db.getSongs();
+  const assignments = (await window.db.getAssignments()).filter(a => a.studentId === studentId);
+
+  const renderList = (items, type, containerId) => {
+    document.getElementById(containerId).innerHTML = items.map(item => {
+      const isAssigned = assignments.some(a => a.contentId === item.id && a.type === type);
+      return `<div class="assign-item">
+        <div class="assign-item-info">
+          <div class="assign-item-title">${isAssigned ? '<span class="assigned-tag">Назначено</span>' : ''}${esc(item.title)}</div>
+          <div class="assign-item-sub">${type === 'song' ? esc(item.artist) : esc(item.description || '')}</div>
+        </div>
+        <button class="btn ${isAssigned ? 'btn-ghost' : 'btn-primary'} btn-xs" onclick="toggleAssign('${studentId}','${type}','${item.id}',${isAssigned})">
+          ${isAssigned ? 'Снять' : 'Назначить'}
+        </button>
+      </div>`;
+    }).join('');
+  };
+
+  renderList(lessons, 'lesson', 'assign-lessons-list');
+  renderList(songs, 'song', 'assign-songs-list');
+}
+
+async function toggleAssign(studentId, type, contentId, isAssigned) {
+  await window.db.toggleAssignment(studentId, type, contentId, isAssigned);
+  loadAssignments();
+  showToast(isAssigned ? 'Назначение снято' : 'Назначено ученику', 'info');
+}
+
+function switchAdminTab(tab) {
+  document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.admin-tab-content').forEach(c => c.classList.remove('active'));
+  document.querySelector(`.admin-tab[onclick*="${tab}"]`).classList.add('active');
+  document.getElementById(`admin-tab-${tab}`).classList.add('active');
+}
+
+// ============================================================
+// STUDENT DASHBOARD
+// ============================================================
+async function loadStudentDashboard(user) {
+  const lessons = await window.db.getLessons();
+  const songs = await window.db.getSongs();
+  const assignments = (await window.db.getAssignments()).filter(a => a.studentId === user.id);
+  const progress = (await window.db.getProgress()).filter(p => p.studentId === user.id);
+  
+  document.getElementById('dash-name').textContent = `Привет, ${user.name}!`;
+  const initials = user.name.split(' ').map(w => w[0]).join('').toUpperCase();
+  document.getElementById('dash-avatar').textContent = initials;
+
+  const assignedLessons = lessons.filter(l => assignments.some(a => a.contentId === l.id && a.type === 'lesson'));
+  const assignedSongs = songs.filter(s => assignments.some(a => a.contentId === s.id && a.type === 'song'));
+
+  const total = assignedLessons.length + assignedSongs.length;
+  const completed = progress.filter(p => p.completed).length;
+  const pct = total > 0 ? Math.round((completed / total) * 100) : 0;
+
+  document.getElementById('prog-completed').textContent = completed;
+  document.getElementById('prog-total').textContent = total;
+  document.getElementById('prog-pct').textContent = pct + '%';
+  document.getElementById('prog-bar').style.width = pct + '%';
+
+  const renderContent = (items, type, containerId) => {
+    const container = document.getElementById(containerId);
+    if (items.length === 0) {
+      container.innerHTML = `<div class="empty-state"><h3>Пока ничего не назначено</h3><p>Твой преподаватель скоро добавит материалы.</p></div>`;
+      return;
+    }
+    container.innerHTML = items.map(item => {
+      const isDone = progress.some(p => p.contentId === item.id && p.type === type && p.completed);
+      return `<div class="content-card ${isDone ? 'completed' : ''}" onclick="toggleCard(this)">
+        <div class="card-header-row">
+          <div>
+            <div class="card-title">${esc(item.title)}</div>
+            <div class="card-subtitle">${type === 'song' ? esc(item.artist) : 'Урок'}</div>
+          </div>
+          <div class="card-actions">
+            <label class="complete-checkbox" onclick="event.stopPropagation()">
+              <input type="checkbox" ${isDone ? 'checked' : ''} onchange="toggleComplete('${user.id}','${type}','${item.id}', this.checked)">
+              <span>${isDone ? 'Готово' : 'Выполнить'}</span>
+            </label>
+          </div>
+        </div>
+        <div class="card-meta">
+          ${type === 'song' ? `<span class="badge ${DIFFICULTY_BADGE[item.difficulty]}">${DIFFICULTY_LABELS[item.difficulty]}</span>` : ''}
+          ${item.videoUrl ? '<span class="badge badge-blue">📹 Видео</span>' : ''}
+          ${item.pdfUrl ? '<span class="badge badge-purple">📄 PDF</span>' : ''}
+        </div>
+        <div class="card-expanded">
+          <div class="card-desc">${esc(item.description || '')}</div>
+          ${item.videoUrl ? `<div class="video-embed"><iframe src="https://www.youtube.com/embed/${getYoutubeId(item.videoUrl)}" allowfullscreen></iframe></div>` : ''}
+          ${item.pdfUrl ? `<a href="${item.pdfUrl}" target="_blank" class="btn btn-ghost btn-sm w-full mt-1" style="justify-content:center">📂 Открыть материалы (PDF)</a>` : ''}
+          ${type === 'song' && item.rhythmPattern ? `
+            <div class="rhythm-wrap">
+              <div class="rhythm-title">Ритмический рисунок (бой):</div>
+              <div class="rhythm-arrows">${formatRhythm(item.rhythmPattern)}</div>
+            </div>
+          ` : ''}
+          ${type === 'song' && item.tabsChords ? `
+            <div class="song-controls" onclick="event.stopPropagation()">
+              <div class="control-group">
+                <span class="control-label">Текст:</span>
+                <button class="btn-control" onclick="changeFontSize('${item.id}', -1)">A-</button>
+                <button class="btn-control" onclick="changeFontSize('${item.id}', 1)">A+</button>
+              </div>
+              <div class="control-group">
+                <span class="control-label">Тональность:</span>
+                <button class="btn-control" onclick="transpose('${item.id}', -1)">-1</button>
+                <span class="transpose-val" id="transpose-${item.id}">0</span>
+                <button class="btn-control" onclick="transpose('${item.id}', 1)">+1</button>
+              </div>
+            </div>
+            <div class="scroll-controls" onclick="event.stopPropagation()">
+              <button class="scroll-btn" id="scroll-btn-${item.id}" onclick="toggleAutoScroll('${item.id}')">▶ Автопрокрутка</button>
+              <span class="scroll-speed">Скорость:</span>
+              <button class="btn-control" onclick="changeScrollSpeed('${item.id}', -1)">-</button>
+              <span class="transpose-val" id="scroll-speed-val-${item.id}">1</span>
+              <button class="btn-control" onclick="changeScrollSpeed('${item.id}', 1)">+</button>
+            </div>
+            <div class="tabs-text mt-2" id="tabs-${item.id}" data-original="${esc(item.tabsChords)}"></div>
+            <div class="chord-diagrams-wrap" id="diagrams-wrap-${item.id}">
+              <div class="chord-diagrams-title">Схемы аккордов:</div>
+              <div class="chord-diagrams-list" id="diagrams-${item.id}"></div>
+            </div>
+          ` : ''}
+          ${item.gtpUrl ? `
+            <div class="alphatab-container" onclick="event.stopPropagation()">
+              <div class="at-player-controls">
+                <button class="at-btn" onclick="toggleAtPlay('${item.id}')" id="at-play-${item.id}">▶ Играть</button>
+                <button class="at-btn" onclick="stopAtPlay('${item.id}')">⏹ Стоп</button>
+                <div class="at-tempo-wrap">
+                  <span>Темп:</span>
+                  <input type="range" min="0.25" max="2" step="0.05" value="1" onchange="changeAtTempo('${item.id}', this.value)">
+                  <span id="at-tempo-val-${item.id}">100%</span>
+                </div>
+              </div>
+              <div id="at-viewport-${item.id}" class="at-viewport" data-file="${item.gtpUrl}"></div>
+            </div>
+          ` : ''}
+        </div>
+      </div>`;
+    }).join('');
+    
+    // After rendering, generate initial diagrams
+    items.forEach(item => {
+      if (type === 'song' && item.tabsChords) {
+        updateChordDiagrams(item.id, item.tabsChords);
+      }
+    });
+  };
+
+  renderContent(assignedLessons, 'lesson', 'student-lessons-list');
+  renderContent(assignedSongs, 'song', 'student-songs-list');
+}
+
+async function toggleComplete(userId, type, contentId, completed) {
+  await window.db.saveProgress(userId, type, contentId, completed);
+  const users = await window.db.getUsers();
+  const user = users.find(u => u.id === userId);
+  loadStudentDashboard(user);
+  showToast(completed ? 'Отлично! Задание выполнено 🎸' : 'Статус обновлен', 'success');
+}
+
+function toggleCard(card) {
+  const exp = card.querySelector('.card-expanded');
+  const isOpen = exp.classList.contains('open');
+  document.querySelectorAll('.card-expanded').forEach(e => e.classList.remove('open'));
+  if (!isOpen) exp.classList.add('open');
+}
+
+function switchDashTab(tab) {
+  document.querySelectorAll('.dash-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.dash-tab-content').forEach(c => c.classList.remove('active'));
+  document.querySelector(`.dash-tab[onclick*="${tab}"]`).classList.add('active');
+  document.getElementById(`dash-tab-${tab}`).classList.add('active');
+}
+
+function getYoutubeId(url) {
+  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+  const match = url.match(regExp);
+  return (match && match[2].length === 11) ? match[2] : null;
+}
+
+// Song controls logic
+const songStates = {};
+
+function changeFontSize(id, delta) {
+  const el = document.getElementById('tabs-' + id);
+  if (!el) return;
+  if (!songStates[id]) songStates[id] = { fontSize: 0.85, transpose: 0 };
+  songStates[id].fontSize = Math.max(0.5, Math.min(1.5, songStates[id].fontSize + delta * 0.05));
+  el.style.fontSize = songStates[id].fontSize + 'rem';
+}
+
+function transpose(id, delta) {
+  const el = document.getElementById('tabs-' + id);
+  const valEl = document.getElementById('transpose-' + id);
+  if (!el || !valEl) return;
+  
+  if (!songStates[id]) songStates[id] = { fontSize: 0.85, transpose: 0 };
+  songStates[id].transpose += delta;
+  valEl.textContent = (songStates[id].transpose > 0 ? '+' : '') + songStates[id].transpose;
+  
+  const original = el.getAttribute('data-original');
+  const newText = transposeText(original, songStates[id].transpose);
+  el.textContent = newText;
+  
+  // Update diagrams for new chords
+  updateChordDiagrams(id, newText);
+}
+
+// Chord Diagram Logic
+const CHORD_DB = {
+  "C": [0, 1, 0, 2, 3, -1], "Cm": [3, 4, 5, 5, 3, -1], "C7": [0, 1, 3, 2, 3, -1],
+  "C#": [4, 6, 6, 6, 4, -1], "C#m": [4, 5, 6, 6, 4, -1],
+  "D": [2, 3, 2, 0, -1, -1], "Dm": [1, 3, 2, 0, -1, -1], "D7": [2, 1, 2, 0, -1, -1],
+  "D#": [6, 8, 8, 8, 6, -1], "D#m": [6, 7, 8, 8, 6, -1],
+  "E": [0, 0, 1, 2, 2, 0], "Em": [0, 0, 0, 2, 2, 0], "E7": [0, 3, 1, 2, 2, 0],
+  "F": [1, 1, 2, 3, 3, 1], "Fm": [1, 1, 1, 3, 3, 1], "F7": [1, 1, 2, 1, 3, 1],
+  "F#": [2, 2, 3, 4, 4, 2], "F#m": [2, 2, 2, 4, 4, 2],
+  "G": [3, 0, 0, 0, 2, 3], "Gm": [3, 3, 3, 5, 5, 3], "G7": [1, 0, 0, 0, 2, 3],
+  "G#": [4, 4, 5, 6, 6, 4], "G#m": [4, 4, 4, 6, 6, 4],
+  "A": [0, 2, 2, 2, 0, -1], "Am": [0, 1, 2, 2, 0, -1], "A7": [0, 2, 0, 2, 0, -1],
+  "A#": [1, 3, 3, 3, 1, -1], "A#m": [1, 2, 3, 3, 1, -1],
+  "B": [2, 4, 4, 4, 2, -1], "Bm": [2, 3, 4, 4, 2, -1], "B7": [2, 0, 2, 1, 2, -1]
+};
+
+function updateChordDiagrams(id, text) {
+  const container = document.getElementById('diagrams-' + id);
+  if (!container) return;
+  
+  // Extract unique chords from text
+  const foundChords = [...new Set(text.match(/[A-G][#b]?(m|7)?/g))].filter(c => CHORD_DB[c] || CHORD_DB[normalizeChord(c)]);
+  
+  if (foundChords.length === 0) {
+    document.getElementById('diagrams-wrap-' + id).style.display = 'none';
+    return;
+  }
+  
+  document.getElementById('diagrams-wrap-' + id).style.display = 'block';
+  container.innerHTML = foundChords.map(chord => {
+    const normalized = normalizeChord(chord);
+    return `<div class="chord-box">
+      <div class="chord-name">${chord}</div>
+      <div class="chord-svg">${generateChordSVG(CHORD_DB[normalized])}</div>
+    </div>`;
+  }).join('');
+}
+
+function normalizeChord(c) {
+  return c.replace('Db', 'C#').replace('Eb', 'D#').replace('Gb', 'F#').replace('Ab', 'G#').replace('Bb', 'A#');
+}
+
+function generateChordSVG(frets) {
+  if (!frets) return '';
+  let svg = `<svg viewBox="0 0 70 80" xmlns="http://www.w3.org/2000/svg">
+    <rect x="10" y="10" width="50" height="60" fill="none" stroke="#333" stroke-width="1"/>
+    <line x1="20" y1="10" x2="20" y2="70" stroke="#ccc" stroke-width="1"/>
+    <line x1="30" y1="10" x2="30" y2="70" stroke="#ccc" stroke-width="1"/>
+    <line x1="40" y1="10" x2="40" y2="70" stroke="#ccc" stroke-width="1"/>
+    <line x1="50" y1="10" x2="50" y2="70" stroke="#ccc" stroke-width="1"/>
+    <line x1="10" y1="22" x2="60" y2="22" stroke="#ccc" stroke-width="1"/>
+    <line x1="10" y1="34" x2="60" y2="34" stroke="#ccc" stroke-width="1"/>
+    <line x1="10" y1="46" x2="60" y2="46" stroke="#ccc" stroke-width="1"/>
+    <line x1="10" y1="58" x2="60" y2="58" stroke="#ccc" stroke-width="1"/>`;
+  
+  const minFret = Math.min(...frets.filter(f => f > 0));
+  const baseFret = minFret > 4 ? minFret : 1;
+  
+  if (baseFret > 1) {
+    svg += `<text x="2" y="20" font-size="8" fill="#666">${baseFret}fr</text>`;
+  } else {
+    svg += `<line x1="10" y1="10" x2="60" y2="10" stroke="#000" stroke-width="3"/>`;
+  }
+
+  frets.forEach((f, i) => {
+    const x = 60 - (i * 10);
+    if (f === -1) {
+      svg += `<text x="${x-3}" y="8" font-size="8" fill="#f00">×</text>`;
+    } else if (f === 0) {
+      svg += `<circle cx="${x}" cy="5" r="2" fill="none" stroke="#333" stroke-width="1"/>`;
+    } else {
+      const y = 10 + (f - baseFret) * 12 + 6;
+      svg += `<circle cx="${x}" cy="${y}" r="4" fill="#8b5cf6"/>`;
+    }
+  });
+  
+  svg += `</svg>`;
+  return svg;
+}
+
+function transposeText(text, steps) {
+  const chords = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
+  const chordsFlat = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"];
+  
+  return text.replace(/[A-G][#b]?(m|maj|7|m7|maj7|sus2|sus4|add9|dim|aug)?/g, (match) => {
+    let chord = match;
+    let suffix = "";
+    
+    const suffixMatch = match.match(/(m|maj|7|m7|maj7|sus2|sus4|add9|dim|aug)$/);
+    if (suffixMatch) {
+      chord = match.substring(0, suffixMatch.index);
+      suffix = suffixMatch[0];
+    }
+    
+    let index = chords.indexOf(chord);
+    if (index === -1) index = chordsFlat.indexOf(chord);
+    if (index === -1) return match;
+    
+    let newIndex = (index + steps) % 12;
+    if (newIndex < 0) newIndex += 12;
+    
+    return chords[newIndex] + suffix;
+  });
+}
+
+function highlightChords(text) {
+  return text.replace(/[A-G][#b]?(m|maj|7|m7|maj7|sus2|sus4|add9|dim|aug)?/g, (match) => {
+    return `<span class="chord-bold">${match}</span>`;
+  });
+}
+
+function formatRhythm(pattern) {
+  // Pattern format: "↓(1) ↓(2) ↑(&) ↑(3) ↓(4)" or just "↓ ↓ ↑"
+  const items = [];
+  const regex = /([↓↑БП])(?:\(([^)]+)\))?|(\s+)/g;
+  let match;
+
+  while ((match = regex.exec(pattern)) !== null) {
+    if (match[3]) continue; // Skip spaces
+    const char = match[1];
+    const count = match[2] || "";
+    
+    let arrowHtml = "";
+    if (char === '↓') arrowHtml = '↓';
+    else if (char === '↑') arrowHtml = '↑';
+    else if (char === 'Б') arrowHtml = '<span style="font-size:1rem; color:var(--purple-light)">Б</span>';
+    else if (char === 'П') arrowHtml = '<span style="font-size:1rem; color:var(--text3)">—</span>';
+    else arrowHtml = `<span style="font-size:1rem">${char}</span>`;
+
+    items.push(`
+      <div class="rhythm-item">
+        <div class="rhythm-arrow">${arrowHtml}</div>
+        <div class="rhythm-count">${esc(count)}</div>
+      </div>
+    `);
+  }
+
+  return items.length > 0 ? items.join('') : esc(pattern);
+}
+
+function updateChordDiagrams(id, text) {
+  const container = document.getElementById('diagrams-' + id);
+  const tabsEl = document.getElementById('tabs-' + id);
+  if (!container || !tabsEl) return;
+  
+  // Update text with highlighting
+  tabsEl.innerHTML = highlightChords(esc(text));
+  
+  // Extract unique chords from text
+  const foundChords = [...new Set(text.match(/[A-G][#b]?(m|7)?/g))].filter(c => CHORD_DB[c] || CHORD_DB[normalizeChord(c)]);
+  
+  if (foundChords.length === 0) {
+    document.getElementById('diagrams-wrap-' + id).style.display = 'none';
+    return;
+  }
+  
+  document.getElementById('diagrams-wrap-' + id).style.display = 'block';
+  container.innerHTML = foundChords.map(chord => {
+    const normalized = normalizeChord(chord);
+    return `<div class="chord-box">
+      <div class="chord-name">${chord}</div>
+      <div class="chord-svg">${generateChordSVG(CHORD_DB[normalized])}</div>
+    </div>`;
+  }).join('');
+}
+
+// Auto-scroll logic
+function toggleAutoScroll(id) {
+  if (!songStates[id]) songStates[id] = { fontSize: 0.85, transpose: 0, scrollSpeed: 1, scrolling: false, scrollInterval: null, scrollPos: 0 };
+  
+  const btn = document.getElementById('scroll-btn-' + id);
+  const container = document.getElementById('tabs-' + id);
+  
+  if (songStates[id].scrolling) {
+    cancelAnimationFrame(songStates[id].scrollInterval);
+    songStates[id].scrolling = false;
+    btn.textContent = '▶ Автопрокрутка';
+    btn.classList.remove('active');
+  } else {
+    if (songStates[id].scrollSpeed === 0) {
+      showToast('Скорость 0: текст не будет двигаться', 'info');
+    }
+    songStates[id].scrolling = true;
+    btn.textContent = '⏹ Стоп';
+    btn.classList.add('active');
+    
+    songStates[id].scrollPos = container.scrollTop;
+    
+    const scrollStep = () => {
+      if (!songStates[id].scrolling) return;
+      
+      if (songStates[id].scrollSpeed > 0) {
+        // Calculate increment based on speed (1-10)
+        // Speed 1 is very slow, Speed 10 is faster
+        const increment = songStates[id].scrollSpeed * 0.05; 
+        songStates[id].scrollPos += increment;
+        container.scrollTop = songStates[id].scrollPos;
+      }
+      
+      if (container.scrollTop + container.clientHeight >= container.scrollHeight - 1) {
+        toggleAutoScroll(id); // Stop at end
+      } else {
+        songStates[id].scrollInterval = requestAnimationFrame(scrollStep);
+      }
+    };
+    
+    songStates[id].scrollInterval = requestAnimationFrame(scrollStep);
+  }
+}
+
+function changeScrollSpeed(id, delta) {
+  if (!songStates[id]) songStates[id] = { fontSize: 0.85, transpose: 0, scrollSpeed: 1, scrolling: false, scrollInterval: null, scrollPos: 0 };
+  
+  // 11 levels: 0 to 10
+  songStates[id].scrollSpeed = Math.max(0, Math.min(10, songStates[id].scrollSpeed + delta));
+  document.getElementById('scroll-speed-val-' + id).textContent = songStates[id].scrollSpeed;
+  
+  // If speed becomes 0 while scrolling, it effectively pauses movement but stays in "scrolling" state
+}
+
+// AlphaTab Logic
+const atInstances = {};
+
+function initAlphaTab(id) {
+  const el = document.getElementById('at-viewport-' + id);
+  if (!el || atInstances[id]) return;
+  
+  const file = el.getAttribute('data-file');
+  const api = new alphaTab.AlphaTabApi(el, {
+    file: file,
+    player: {
+      enablePlayer: true,
+      soundFont: 'https://cdn.jsdelivr.net/npm/@coderline/alphatab@1.3.0/dist/soundfont/sonivox.sf2'
+    }
+  });
+  
+  atInstances[id] = api;
+  
+  api.playerReady.on(() => {
+    showToast('Табулатура загружена', 'info');
+  });
+}
+
+function toggleAtPlay(id) {
+  if (!atInstances[id]) initAlphaTab(id);
+  const api = atInstances[id];
+  const btn = document.getElementById('at-play-' + id);
+  
+  if (api.playerState === 1) { // Playing
+    api.pausePlayer();
+    btn.textContent = '▶ Играть';
+  } else {
+    api.playPlayer();
+    btn.textContent = '⏸ Пауза';
+  }
+}
+
+function stopAtPlay(id) {
+  if (atInstances[id]) {
+    atInstances[id].stopPlayer();
+    document.getElementById('at-play-' + id).textContent = '▶ Играть';
+  }
+}
+
+function changeAtTempo(id, val) {
+  if (atInstances[id]) {
+    atInstances[id].playbackSpeed = parseFloat(val);
+    document.getElementById('at-tempo-val-' + id).textContent = Math.round(val * 100) + '%';
+  }
+}
+
+function toggleCard(card) {
+  const exp = card.querySelector('.card-expanded');
+  const isOpen = exp.classList.contains('open');
+  document.querySelectorAll('.card-expanded').forEach(e => e.classList.remove('open'));
+  if (!isOpen) {
+    exp.classList.add('open');
+    // If there's an AlphaTab viewport, init it when card opens
+    const atViewport = exp.querySelector('.at-viewport');
+    if (atViewport) {
+      const id = atViewport.id.replace('at-viewport-', '');
+      setTimeout(() => initAlphaTab(id), 100);
+    }
+  }
+}
+
+// ============================================================
+// INIT
+// ============================================================
+async function init() {
+  const theme = localStorage.getItem('m4a_theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', theme);
+  
+  // Wait for Firebase to be ready
+  setTimeout(async () => {
+    if (window.initFirebaseApp) {
+      await window.initFirebaseApp();
+      const session = window.db.getSession();
+      if (session) {
+        updateHeader(session);
+        if (session.role === 'admin') { loadAdminPanel(); showView('admin'); }
+        else { 
+          const users = await window.db.getUsers();
+          const user = users.find(u => u.id === session.userId);
+          if (user) { loadStudentDashboard(user); showView('dashboard'); }
+          else { logout(); }
+        }
+      }
+    }
+  }, 1000);
+}
+
+window.onload = init;
+
+// Register Service Worker for PWA
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js')
+      .then(reg => console.log('SW registered!', reg))
+      .catch(err => console.log('SW registration failed: ', err));
+  });
+}
+</script>
+</body>
+</html>
